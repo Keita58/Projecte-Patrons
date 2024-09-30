@@ -1,8 +1,8 @@
 public class NauExploracio implements Nau {
 
-    String nom;
-    int punts;
-    int saldo;
+    private String nom;
+    private int punts;
+    private int saldo;
 
     public NauExploracio(int punts, String nom, int saldoRecursos) {
         this.nom = nom;

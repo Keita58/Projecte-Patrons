@@ -1,8 +1,8 @@
 public class NauLleugera implements Nau {
 
-    String nom;
-    int punts;
-    int saldo;
+    private String nom;
+    private int punts;
+    private int saldo;
 
     public NauLleugera(int punts, String nom, int saldo) {
         this.punts = punts;
