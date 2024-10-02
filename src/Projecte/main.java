@@ -1,4 +1,5 @@
 package Projecte;
+import java.beans.PropertyChangeListener;
 import java.util.LinkedList;
 
 public class main {
@@ -35,6 +36,15 @@ public class main {
         
         String resultat="Nau "+naucombat+", Kebab: "+kebab+", escut: "+escut+", robot: "+robot+", espiral: "+espiral;
         System.out.println(resultat);
+        RecolectorPunts observer = new RecolectorPunts();
+        NauPesada a = (NauPesada) nFactory.crearNau("Nau pesada", 20, "Nau Observer", 100);
+        NauLleugera b = (NauLleugera) nFactory.crearNau("Nau lleugera", 20, "Nau Observer", 100);
+        ObjecteCapturat objc = new ObjecteCapturat();
+        System.out.println("Punts del kebab: "+kebab.puntsASumar());
+        System.out.println("Punts abans: "+b.getPunts());
+        objc.Capturat(b, kebab);
+        System.out.println("Punts despres: "+b.getPunts());
+        
 
 
         

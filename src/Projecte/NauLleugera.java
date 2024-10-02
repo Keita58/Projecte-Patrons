@@ -44,7 +44,12 @@ public class NauLleugera implements Nau, PropertyChangeListener  {
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
 		// TODO Auto-generated method stub
-		
+		this.setPunts((int)evt.getNewValue());
+	}
+
+	private void setPunts(int newValue) {
+		// TODO Auto-generated method stub
+		this.punts = newValue;
 	}
 
 }
