@@ -47,7 +47,7 @@ public class NauExploracio implements Nau, PropertyChangeListener  {
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
 		// TODO Auto-generated method stub
-		this.setPunts((int)evt.getNewValue());
+		this.setPunts(this.punts+(int)evt.getNewValue());
 	}
 
 	private void setPunts(int newValue) {
