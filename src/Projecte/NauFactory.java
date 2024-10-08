@@ -1,4 +1,5 @@
 package Projecte;
+
 public class NauFactory {
 
     public Nau crearNau(String tipus, int punts, String nom, int saldo) {

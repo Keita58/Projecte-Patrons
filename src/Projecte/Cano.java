@@ -29,6 +29,30 @@ public class Cano implements Equipament{
 		return "Cano [nom=" + nom + ", factor=" + factor + ", tipus=" + tipus + "]";
 	}
 
+	@Override
+	public int getPunts() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'getPunts'");
+	}
+
+	@Override
+	public int getCapacitatMoviment() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'getCapacitatMoviment'");
+	}
+
+	@Override
+	public int getSaldoRecursos() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'getSaldoRecursos'");
+	}
+
+	@Override
+	public String getDescripcio() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'getDescripcio'");
+	}
+
 
 	
 

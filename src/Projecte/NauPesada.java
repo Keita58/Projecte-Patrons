@@ -54,4 +54,10 @@ public class NauPesada implements Nau, PropertyChangeListener {
 		this.punts = newValue;
 	}
 
+    @Override
+    public String getDescripcio() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getDescripcio'");
+    }
+
 }

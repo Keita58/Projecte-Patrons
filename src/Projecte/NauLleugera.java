@@ -52,4 +52,10 @@ public class NauLleugera implements Nau, PropertyChangeListener  {
 		this.punts = newValue;
 	}
 
+    @Override
+    public String getDescripcio() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getDescripcio'");
+    }
+
 }

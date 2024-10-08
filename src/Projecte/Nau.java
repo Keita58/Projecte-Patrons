@@ -5,4 +5,5 @@ public interface Nau {
 	int getPunts();
 	int getCapacitatMoviment();
 	int getSaldoRecursos();
+	String getDescripcio();
 }
