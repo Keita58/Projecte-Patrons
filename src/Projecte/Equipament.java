@@ -1,6 +1,6 @@
 package Projecte;
 
-public interface Equipament extends Nau {
+public interface Equipament {
 	String getNom();
 	String getTipus();
 	double getFactor();

@@ -1,25 +1,41 @@
 package Projecte;
 
 public class ObjecteCapturat {
-	public void Capturat(Nau n, Recurs r) {
-		RecolectorPunts a = new RecolectorPunts();
+
+	public void Capturat(RecolectorPunts recolectorPunts, Nau n, Object o) {
+
 		if(n instanceof NauPesada) {
-			NauPesada n2 = (NauPesada) n;
-			a.addPropertyChangeListener(n2);
-			a.setPunts(r.puntsASumar());
-			a.removePropertyChangeListener(n2);
+            if (o instanceof Bonus) {
+				recolectorPunts.setPunts(((Bonus) o).puntsASumar());
+			}
+			else if (o instanceof Enemic) {
+				recolectorPunts.setPunts(((Enemic) o).getPuntsARestar());
+			}
+			else if (o instanceof Recurs) {
+				recolectorPunts.setPunts(((Recurs) o).puntsASumar());
+			}
 		}
 		else if(n instanceof NauLleugera) {
-			NauLleugera n2 = (NauLleugera) n;
-			a.addPropertyChangeListener(n2);
-			a.setPunts(r.puntsASumar());
-			a.removePropertyChangeListener(n2);
+			if (o instanceof Bonus) {
+				recolectorPunts.setPunts(((Bonus) o).puntsASumar());
+			}
+			else if (o instanceof Enemic) {
+				recolectorPunts.setPunts(((Enemic) o).getPuntsARestar());
+			}
+			else if (o instanceof Recurs) {
+				recolectorPunts.setPunts(((Recurs) o).puntsASumar());
+			}
 		}
 		else if(n instanceof NauExploracio) {
-			NauExploracio n2 = (NauExploracio) n;
-			a.addPropertyChangeListener(n2);
-			a.setPunts(r.puntsASumar());
-			a.removePropertyChangeListener(n2);
+			if (o instanceof Bonus) {
+				recolectorPunts.setPunts(((Bonus) o).puntsASumar());
+			}
+			else if (o instanceof Enemic) {
+				recolectorPunts.setPunts(((Enemic) o).getPuntsARestar());
+			}
+			else if (o instanceof Recurs) {
+				recolectorPunts.setPunts(((Recurs) o).puntsASumar());
+			}
 		}
 	}
 }

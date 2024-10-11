@@ -2,15 +2,21 @@ package Projecte;
 
 public class NauFactory {
 
-    public Nau crearNau(String tipus, int punts, String nom, int saldo) {
+    public Nau crearNau(RecolectorPunts recolectorPunts, String tipus, int punts, String nom, int saldo) {
         if (tipus.equalsIgnoreCase("Nau Lleugera")) {
-            return new NauLleugera(punts, nom, saldo);
+            NauLleugera nauLleugera = new NauLleugera(punts, nom, saldo);
+            recolectorPunts.addPropertyChangeListener(nauLleugera);
+            return nauLleugera;
         } 
         else if (tipus.equalsIgnoreCase("Nau Pesada")) {
-            return new NauPesada(punts, nom, saldo);
+            NauPesada nauPesada = new NauPesada(punts, nom, saldo);
+            recolectorPunts.addPropertyChangeListener(nauPesada);
+            return nauPesada;
         } 
         else if (tipus.equalsIgnoreCase("Nau Exploració")) {
-            return new NauExploracio(punts, nom, saldo);
+            NauExploracio nauExploracio = new NauExploracio(punts, nom, saldo);
+            recolectorPunts.addPropertyChangeListener(nauExploracio);
+            return nauExploracio;
         }
         return null;
     }

@@ -3,7 +3,7 @@ package Projecte;
 public class NauCombat implements Enemic{
 
 	String nom="Nau de combat";
-	int puntsRestar=10;
+	int puntsRestar=-10;
 	String tipus="Enemic";
 	@Override
 	public String getNom() {

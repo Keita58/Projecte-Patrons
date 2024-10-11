@@ -2,7 +2,7 @@ package Projecte;
 
 public class Alien implements Enemic {
 	String nom="Alien";
-	int puntsRestar=7;
+	int puntsRestar=-7;
 	String tipus="Enemic";
 	@Override
 	public String getNom() {

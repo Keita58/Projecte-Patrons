@@ -3,7 +3,7 @@ package Projecte;
 public class Meteorit implements Enemic {
 
 	String nom="Meteorit";
-	int puntsRestar=15;
+	int puntsRestar=-15;
 	String tipus="Enemic";
 	@Override
 	public String getNom() {

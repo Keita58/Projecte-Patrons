@@ -2,9 +2,17 @@ package Projecte;
 
 public class Escut implements Equipament {
 
-	String nom="Escut protector";
-	double factor=0.75;
-	String tipus="Equipament";
+	String nom;
+	double factor;
+	String tipus;
+
+	public Escut(Nau nau) {
+		super(nau);
+		nom = "Escut protector";
+		factor = 0.75;
+		tipus = "Equipament";
+	}
+
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub

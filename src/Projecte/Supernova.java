@@ -2,7 +2,7 @@ package Projecte;
 
 public class Supernova implements Enemic {
 	String nom="Supernova";
-	int puntsRestar=20;
+	int puntsRestar=-20;
 	String tipus="Enemic";
 	@Override
 	public String getNom() {
