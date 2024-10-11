@@ -1,6 +1,6 @@
 package Projecte;
 
-public class Escut implements Equipament {
+public class Escut extends NauDecorator implements Equipament {
 
 	String nom;
 	double factor;
