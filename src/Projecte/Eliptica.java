@@ -1,8 +1,17 @@
 package Projecte;
 
-public class Eliptica implements Galaxia {
-	String nom="El·líptica";
-	String tipus="Galàxia";
+public class Eliptica extends NauDecorator implements Galaxia {
+
+	String nom;
+	String tipus;
+
+	public Eliptica(Nau nau)
+	{
+		super(nau);
+		nom="El·líptica";
+		tipus="Galàxia";
+	}
+
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub
@@ -44,8 +53,4 @@ public class Eliptica implements Galaxia {
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException("Unimplemented method 'getDescripcio'");
 	}
-
-	
-	
-	
 }

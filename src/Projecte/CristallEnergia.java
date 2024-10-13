@@ -1,9 +1,17 @@
 package Projecte;
 
 public class CristallEnergia implements Recurs {
-	String nom="Cristall d'energia";
-	int puntsSumar=10;
-	String tipus="Recurs";
+	
+	String nom;
+	int puntsSumar;
+	String tipus;
+	
+	public CristallEnergia() {
+		this.nom = "Cristall d'energia";
+		this.puntsSumar = 10;
+		this.tipus = "Recurs";
+	}
+	
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub

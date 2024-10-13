@@ -1,8 +1,16 @@
 package Projecte;
 
-public class Espiral implements Galaxia{
-	String nom="Espiral";
-	String tipus="Galàxia";
+public class Espiral extends NauDecorator implements Galaxia{
+
+	String nom;
+	String tipus;
+
+	public Espiral(Nau nau) {
+		super(nau);
+		nom="Espiral";
+		tipus="Galàxia";
+	}
+
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub

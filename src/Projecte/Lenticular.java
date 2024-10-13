@@ -1,9 +1,16 @@
 package Projecte;
 
-public class Lenticular implements Galaxia {
+public class Lenticular extends NauDecorator implements Galaxia {
 
-	String nom="Lenticular";
-	String tipus="Galàxia";
+	String nom;
+	String tipus;
+
+	public Lenticular(Nau nau) {
+		super(nau);
+		this.nom = "Lenticular";
+		this.tipus = "Galàxia";
+	}
+
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub

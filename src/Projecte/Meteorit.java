@@ -2,9 +2,16 @@ package Projecte;
 
 public class Meteorit implements Enemic {
 
-	String nom="Meteorit";
-	int puntsRestar=-15;
-	String tipus="Enemic";
+	String nom;
+	int puntsRestar;
+	String tipus;
+
+	public Meteorit(){
+		nom="Meteorit";
+		puntsRestar=-15;
+		tipus="Enemic";
+	}
+
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub

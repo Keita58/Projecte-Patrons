@@ -1,9 +1,17 @@
 package Projecte;
 
 public class AcceleradorVelocitat implements Bonus {
-	String nom="Accelerador de velocitat";
-	int puntsSumar=1;
-	String tipus="Bonus";
+
+	String nom;
+	int puntsSumar;
+	String tipus;
+
+	public AcceleradorVelocitat() {
+		this.nom = "Accelerador de velocitat";
+		this.puntsSumar = 1;
+		this.tipus = "Bonus";
+	}
+
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub

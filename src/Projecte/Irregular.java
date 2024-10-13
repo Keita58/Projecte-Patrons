@@ -1,8 +1,15 @@
 package Projecte;
 
-public class Irregular implements Galaxia {
-	String nom="Irregular";
+public class Irregular extends NauDecorator implements Galaxia {
+	String nom;
 	String tipus="Galàxia";
+
+	public Irregular(Nau nau) {
+		super(nau);
+		nom="Irregular";
+		tipus="Galàxia";
+	}
+
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub
@@ -40,8 +47,7 @@ public class Irregular implements Galaxia {
 
 	@Override
 	public String getDescripcio() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getDescripcio'");
+		return super.getDescripcio() + " amb " + this.getNom();
 	}
 
 	

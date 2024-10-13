@@ -2,9 +2,17 @@ package Projecte;
 
 public class Cano implements Equipament{
 
-	String nom="Canó";
-	double factor=0.33;
-	String tipus="Equipament";
+	String nom;
+	double factor;
+	String tipus;
+
+	public Cano(Nau nau) {
+		super(nau);
+		nom="Canó";
+		factor=0.33;
+		tipus="Equipament";
+	}
+
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub

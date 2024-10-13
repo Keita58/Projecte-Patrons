@@ -1,9 +1,17 @@
 package Projecte;
 
 public class RobotReparador implements Bonus {
-	String nom="Robot reparador";
-	int puntsSumar=5;
-	String tipus="Bonus";
+
+	String nom;
+	int puntsSumar;
+	String tipus;
+
+	public RobotReparador() {
+		this.nom = "robot reparador";
+		this.puntsSumar = 5;
+		this.tipus = "Bonus";
+	}
+
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub
@@ -22,11 +30,8 @@ public class RobotReparador implements Bonus {
 		return puntsSumar;
 	}
 
-	
 	@Override
 	public String toString() {
 		return "RobotReparador [nom=" + nom + ", puntsSumar=" + puntsSumar + ", tipus=" + tipus + "]";
 	}
-
-	
 }

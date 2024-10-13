@@ -1,9 +1,17 @@
 package Projecte;
 
 public class Alien implements Enemic {
-	String nom="Alien";
-	int puntsRestar=-7;
-	String tipus="Enemic";
+
+	String nom;
+	int puntsRestar;
+	String tipus;
+
+	public Alien() {
+		this.nom = "Alien";
+		this.puntsRestar = -7;
+		this.tipus = "Enemic";
+	}
+
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub

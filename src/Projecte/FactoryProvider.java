@@ -1,6 +1,7 @@
 package Projecte;
 
 public class FactoryProvider {
+
 	public static JocFactory getFactory(String choice){
 		if ("Enemic".equalsIgnoreCase(choice)) {
 			return new EnemicFactory();
@@ -21,5 +22,4 @@ public class FactoryProvider {
 		return null;
 		
 	}
-
 }

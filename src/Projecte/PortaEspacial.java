@@ -2,9 +2,16 @@ package Projecte;
 
 public class PortaEspacial implements Bonus{
 
-	String nom="Porta espacial";
-	int puntsSumar=2;
-	String tipus="Bonus";
+	String nom;
+	int puntsSumar;
+	String tipus;
+
+	public PortaEspacial() {
+		this.nom = "Porta espacial";
+		this.puntsSumar = 2;
+		this.tipus = "Bonus";
+	}
+
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub

@@ -1,9 +1,16 @@
 package Projecte;
 
 public class Supernova implements Enemic {
-	String nom="Supernova";
-	int puntsRestar=-20;
-	String tipus="Enemic";
+	String nom;
+	int puntsRestar;
+	String tipus;
+
+	public Supernova(){
+		nom="Supernova";
+		puntsRestar=-20;
+		tipus="Enemic";
+	}
+
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub

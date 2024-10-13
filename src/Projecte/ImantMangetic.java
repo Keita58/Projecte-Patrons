@@ -1,10 +1,18 @@
 package Projecte;
 
-public class ImantMangetic implements Equipament{
+public class ImantMangetic extends NauDecorator implements Equipament{
 
-	String nom="Imant magnètic";
-	double factor=1.5;
-	String tipus="Equipament";
+	String nom;
+	double factor;
+	String tipus;
+
+	public ImantMangetic(Nau nau) {
+		super(nau);
+		this.nom = "Iman magnètic";
+		this.factor = 1.5;
+		this.tipus = "Equipament";
+	}
+
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub

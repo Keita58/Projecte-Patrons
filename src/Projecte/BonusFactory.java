@@ -13,5 +13,4 @@ public class BonusFactory implements JocFactory<Bonus> {
 		}
 		return null;
 	}
-
 }

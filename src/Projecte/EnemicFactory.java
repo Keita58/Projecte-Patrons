@@ -16,5 +16,4 @@ public class EnemicFactory implements JocFactory<Enemic>{
 		}
 		return null;
 	}
-
 }

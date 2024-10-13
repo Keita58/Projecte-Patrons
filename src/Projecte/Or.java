@@ -2,9 +2,16 @@ package Projecte;
 
 public class Or implements Recurs {
 
-	String nom="Or";
-	int puntsSumar=50;
-	String tipus="Recurs";
+	String nom;
+	int puntsSumar;
+	String tipus;
+
+	public Or(){
+		nom="Or";
+		puntsSumar=50;
+		tipus="Recurs";
+	}
+
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub

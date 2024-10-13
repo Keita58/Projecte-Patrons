@@ -1,9 +1,17 @@
 package Projecte;
 
 public class Kebab implements Recurs{
-	String nom="Kebab";
-	int puntsSumar=25;
-	String tipus="Recurs";
+
+	String nom;
+	int puntsSumar;
+	String tipus;
+
+	public Kebab(){
+		this.nom = "Kebab";
+		this.puntsSumar = 25;
+		this.tipus = "Recurs";
+	}
+
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub

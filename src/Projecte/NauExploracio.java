@@ -58,7 +58,7 @@ public class NauExploracio implements Nau, PropertyChangeListener  {
     @Override
     public String getDescripcio() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getDescripcio'");
+        return "Nau Exploració";
     }
 
 }

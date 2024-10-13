@@ -2,9 +2,16 @@ package Projecte;
 
 public class NauCombat implements Enemic{
 
-	String nom="Nau de combat";
-	int puntsRestar=-10;
-	String tipus="Enemic";
+	String nom;
+	int puntsRestar;
+	String tipus;
+
+	public NauCombat() {
+		this.nom = "Nau de combat";
+		this.puntsRestar = 10;
+		this.tipus = "Enemic";
+	}
+
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub
@@ -27,7 +34,4 @@ public class NauCombat implements Enemic{
 	public String toString() {
 		return "NauCombat [nom=" + nom + ", puntsRestar=" + puntsRestar + ", tipus=" + tipus + "]";
 	}
-
-	
-
 }
