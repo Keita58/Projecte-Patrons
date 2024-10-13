@@ -23,7 +23,6 @@ public class Espiral extends NauDecorator implements Galaxia{
 		return tipus;
 	}
 
-
 	@Override
 	public String toString() {
 		return "Espiral [nom=" + nom + ", tipus=" + tipus + "]";
@@ -50,7 +49,7 @@ public class Espiral extends NauDecorator implements Galaxia{
 	@Override
 	public String getDescripcio() {
 		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getDescripcio'");
+		return super.getDescripcio()+" amb "+this.getNom();
 	}
 
 	

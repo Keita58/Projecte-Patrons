@@ -57,7 +57,7 @@ public class ImantMangetic extends NauDecorator implements Equipament{
 	@Override
 	public String getDescripcio() {
 		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getDescripcio'");
+		return super.getDescripcio()+" amb "+this.nom;
 	}
 
 	

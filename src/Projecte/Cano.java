@@ -1,6 +1,6 @@
 package Projecte;
 
-public class Cano implements Equipament{
+public class Cano extends NauDecorator implements Equipament {
 
 	String nom;
 	double factor;
@@ -57,8 +57,7 @@ public class Cano implements Equipament{
 
 	@Override
 	public String getDescripcio() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getDescripcio'");
+		return super.getDescripcio()+" amb "+this.getNom();
 	}
 
 

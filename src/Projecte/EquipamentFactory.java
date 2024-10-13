@@ -1,6 +1,35 @@
 package Projecte;
 
+import java.util.Random;
+
 public class EquipamentFactory implements JocFactory<Equipament> {
+
+	Nau nau = new Nau() {
+		@Override
+		public String getNom() {
+			return "";
+		}
+
+		@Override
+		public int getPunts() {
+			return 0;
+		}
+
+		@Override
+		public int getCapacitatMoviment() {
+			return 0;
+		}
+
+		@Override
+		public int getSaldoRecursos() {
+			return 0;
+		}
+
+		@Override
+		public String getDescripcio() {
+			return "";
+		}
+	};
 
 	@Override
 	public Equipament create(String tipus, String nom) {

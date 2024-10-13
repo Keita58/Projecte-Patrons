@@ -50,7 +50,7 @@ public class Lenticular extends NauDecorator implements Galaxia {
 	@Override
 	public String getDescripcio() {
 		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getDescripcio'");
+		return super.getDescripcio()+" amb "+this.getNom();
 	}
 
 	
