@@ -8,9 +8,9 @@ public class Cano extends NauDecorator implements Equipament {
 
 	public Cano(Nau nau) {
 		super(nau);
-		nom="Canó";
-		factor=0.33;
-		tipus="Equipament";
+		this.nom = "Canó";
+		this.factor = 0.33;
+		this.tipus = "Equipament";
 	}
 
 	@Override

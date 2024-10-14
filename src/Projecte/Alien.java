@@ -34,9 +34,4 @@ public class Alien implements Enemic {
 	public String toString() {
 		return "Alien [nom=" + nom + ", puntsRestar=" + puntsRestar + ", tipus=" + tipus + "]";
 	}
-
-
-	
-	
-	
 }

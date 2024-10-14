@@ -8,9 +8,9 @@ public class Escut extends NauDecorator implements Equipament {
 
 	public Escut(Nau nau) {
 		super(nau);
-		nom = "Escut protector";
-		factor = 0.75;
-		tipus = "Equipament";
+		this.nom = "Escut protector";
+		this.factor = 0.75;
+		this.tipus = "Equipament";
 	}
 
 	@Override

@@ -1,7 +1,5 @@
 package Projecte;
 
-import java.util.Random;
-
 public class EquipamentFactory implements JocFactory<Equipament> {
 
 	Nau nau = new Nau() {

@@ -6,8 +6,8 @@ public class Irregular extends NauDecorator implements Galaxia {
 
 	public Irregular(Nau nau) {
 		super(nau);
-		nom="Irregular";
-		tipus="Galàxia";
+		nom = "Irregular";
+		tipus = "Galàxia";
 	}
 
 	@Override

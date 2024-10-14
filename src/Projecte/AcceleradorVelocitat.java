@@ -34,8 +34,4 @@ public class AcceleradorVelocitat implements Bonus {
 	public String toString() {
 		return "AcceleradorVelocitat [nom=" + nom + ", puntsSumar=" + puntsSumar + ", tipus=" + tipus + "]";
 	}
-
-	
-	
-
 }

@@ -8,8 +8,8 @@ public class Eliptica extends NauDecorator implements Galaxia {
 	public Eliptica(Nau nau)
 	{
 		super(nau);
-		nom="El·líptica";
-		tipus="Galàxia";
+		this.nom = "El·líptica";
+		this.tipus = "Galàxia";
 	}
 
 	@Override

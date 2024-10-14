@@ -7,9 +7,9 @@ public class Or implements Recurs {
 	String tipus;
 
 	public Or(){
-		nom="Or";
-		puntsSumar=50;
-		tipus="Recurs";
+		nom = "Or";
+		puntsSumar = 50;
+		tipus = "Recurs";
 	}
 
 	@Override
@@ -30,12 +30,8 @@ public class Or implements Recurs {
 		return puntsSumar;
 	}
 
-
 	@Override
 	public String toString() {
 		return "Or [nom=" + nom + ", puntsSumar=" + puntsSumar + ", tipus=" + tipus + "]";
 	}
-
-
-
 }

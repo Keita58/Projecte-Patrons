@@ -1,14 +1,15 @@
 package Projecte;
 
 public class Supernova implements Enemic {
+
 	String nom;
 	int puntsRestar;
 	String tipus;
 
 	public Supernova(){
-		nom="Supernova";
-		puntsRestar=-20;
-		tipus="Enemic";
+		nom = "Supernova";
+		puntsRestar = -20;
+		tipus = "Enemic";
 	}
 
 	@Override
@@ -33,9 +34,4 @@ public class Supernova implements Enemic {
 	public String toString() {
 		return "Supernova [nom=" + nom + ", puntsRestar=" + puntsRestar + ", tipus=" + tipus + "]";
 	}
-
-	
-	
-	
-
 }

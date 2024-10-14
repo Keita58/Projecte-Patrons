@@ -7,9 +7,9 @@ public class Meteorit implements Enemic {
 	String tipus;
 
 	public Meteorit(){
-		nom="Meteorit";
-		puntsRestar=-15;
-		tipus="Enemic";
+		nom = "Meteorit";
+		puntsRestar = -15;
+		tipus = "Enemic";
 	}
 
 	@Override
@@ -34,8 +34,4 @@ public class Meteorit implements Enemic {
 	public String toString() {
 		return "Meteorit [nom=" + nom + ", puntsRestar=" + puntsRestar + ", tipus=" + tipus + "]";
 	}
-
-	
-
-	
 }

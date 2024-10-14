@@ -7,8 +7,8 @@ public class Espiral extends NauDecorator implements Galaxia{
 
 	public Espiral(Nau nau) {
 		super(nau);
-		nom="Espiral";
-		tipus="Galàxia";
+		this.nom = "Espiral";
+		this.tipus = "Galàxia";
 	}
 
 	@Override

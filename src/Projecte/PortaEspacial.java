@@ -30,13 +30,8 @@ public class PortaEspacial implements Bonus{
 		return puntsSumar;
 	}
 
-	
 	@Override
 	public String toString() {
 		return "PortaEspacial [nom=" + nom + ", puntsSumar=" + puntsSumar + ", tipus=" + tipus + "]";
 	}
-
-	
-	
-
 }

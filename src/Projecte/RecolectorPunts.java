@@ -5,11 +5,12 @@ import java.beans.PropertyChangeSupport;
 
 public class RecolectorPunts {
 
-	private int punts = 0;
+	private int punts;
 	private PropertyChangeSupport support;
 	
 	public RecolectorPunts() {
 		support = new PropertyChangeSupport(this);
+		this.punts = 0;
 	}
 
 	public void addPropertyChangeListener(PropertyChangeListener pcl) {
