@@ -57,6 +57,10 @@ public class main {
         objc.Capturat(recolectorPunts, aux, naucombat);
         System.out.println("Punts despres: " + aux.getPunts());
         
+        Nau nau0 = new Cano(new Lenticular(new NauLleugera(10, "EEEE", 10)));
+        objc.Capturat(recolectorPunts, nau0, naucombat);
+        //System.out.println((nau0.getClass().getClasses()[2].getMethod("getPunts", Nau));
+        
         for(Nau nau : llistaNaus) {
             if(nau instanceof NauExploracio) {
                 recolectorPunts.removePropertyChangeListener((NauExploracio)nau);
