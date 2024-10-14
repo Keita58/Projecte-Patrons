@@ -8,7 +8,7 @@ public class NauCombat implements Enemic{
 
 	public NauCombat() {
 		this.nom = "Nau de combat";
-		this.puntsRestar = 10;
+		this.puntsRestar = -10;
 		this.tipus = "Enemic";
 	}
 

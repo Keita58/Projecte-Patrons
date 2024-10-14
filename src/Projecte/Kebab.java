@@ -25,7 +25,7 @@ public class Kebab implements Recurs{
 	}
 
 	@Override
-	public int puntsASumar() {
+	public double puntsASumar() {
 		// TODO Auto-generated method stub
 		return puntsSumar;
 	}

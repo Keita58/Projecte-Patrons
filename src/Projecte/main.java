@@ -50,11 +50,12 @@ public class main {
         ObjecteCapturat objc = new ObjecteCapturat();
         System.out.println("Punts del kebab: " + kebab.puntsASumar());
         System.out.println("Punts abans: " + aux.getPunts());
+        //Suma punts
         objc.Capturat(recolectorPunts, aux, kebab);
         System.out.println("Punts despres: " + aux.getPunts());
-        System.out.println("Punts despres: " + aux.getPunts());
-        
+        //Resta punts
         objc.Capturat(recolectorPunts, aux, naucombat);
+        System.out.println("Punts despres: " + aux.getPunts());
         
         for(Nau nau : llistaNaus) {
             if(nau instanceof NauExploracio) {
@@ -68,7 +69,7 @@ public class main {
             }
         }
 
-        Nau nau1 = new Escut(new Color(aux, ColorEnum.RED));
+        Nau nau1 = new Color(new Espiral(new Escut(aux)), ColorEnum.RED);
         System.out.println(nau1.getDescripcio());
     }
 }

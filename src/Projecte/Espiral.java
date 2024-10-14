@@ -29,7 +29,7 @@ public class Espiral extends NauDecorator implements Galaxia{
 	}
 
 	@Override
-	public int getPunts() {
+	public double getPunts() {
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException("Unimplemented method 'getPunts'");
 	}

@@ -15,7 +15,7 @@ public class Color extends NauDecorator {
     }
 
     @Override
-    public int getPunts() {
+    public double getPunts() {
         return 0;
     }
 

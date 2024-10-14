@@ -9,7 +9,7 @@ public class GalaxiaFacotry implements JocFactory<Galaxia> {
 		}
 
 		@Override
-		public int getPunts() {
+		public double getPunts() {
 			return 0;
 		}
 

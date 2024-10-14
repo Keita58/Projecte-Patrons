@@ -37,7 +37,7 @@ public class ImantMangetic extends NauDecorator implements Equipament{
 	}
 
 	@Override
-	public int getPunts() {
+	public double getPunts() {
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException("Unimplemented method 'getPunts'");
 	}

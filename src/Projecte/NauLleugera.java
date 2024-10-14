@@ -6,10 +6,10 @@ import java.beans.PropertyChangeListener;
 public class NauLleugera implements Nau, PropertyChangeListener  {
 
     private String nom;
-    private int punts;
+    private double punts;
     private int saldo;
 
-    public NauLleugera(int punts, String nom, int saldo) {
+    public NauLleugera(double punts, String nom, int saldo) {
         this.punts = punts;
         this.nom = nom;
         this.saldo = saldo;
@@ -21,7 +21,7 @@ public class NauLleugera implements Nau, PropertyChangeListener  {
     }
 
     @Override
-    public int getPunts() {
+    public double getPunts() {
         return punts;
     }
 
@@ -44,10 +44,22 @@ public class NauLleugera implements Nau, PropertyChangeListener  {
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
 		// TODO Auto-generated method stub
-		this.setPunts(this.punts+(int)evt.getNewValue());
+        PuntsAdapter pA = new PuntsAdapter() {
+            @Override
+            public double getPunts() {
+                return 0;
+            }
+        };
+        if((double)evt.getNewValue() < 0) {
+            pA = new PuntsRestarAdapterImpl(this, (double) evt.getNewValue());
+        }
+        else{
+            pA = new PuntsSumarAdapterImpl(this, (double) evt.getNewValue());
+        }
+        this.setPunts(this.punts + pA.getPunts());
 	}
 
-	private void setPunts(int newValue) {
+	private void setPunts(double newValue) {
 		// TODO Auto-generated method stub
 		this.punts = newValue;
 	}

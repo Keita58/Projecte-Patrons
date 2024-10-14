@@ -23,15 +23,14 @@ public class Eliptica extends NauDecorator implements Galaxia {
 		// TODO Auto-generated method stub
 		return tipus;
 	}
-
-
+	
 	@Override
 	public String toString() {
 		return "Eliptica [nom=" + nom + ", tipus=" + tipus + "]";
 	}
 
 	@Override
-	public int getPunts() {
+	public double getPunts() {
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException("Unimplemented method 'getPunts'");
 	}

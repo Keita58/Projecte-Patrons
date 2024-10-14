@@ -2,7 +2,7 @@ package Projecte;
 
 public interface Nau {
 	String getNom();
-	int getPunts();
+	double getPunts();
 	int getCapacitatMoviment();
 	int getSaldoRecursos();
 	String getDescripcio();

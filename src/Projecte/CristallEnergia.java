@@ -3,7 +3,7 @@ package Projecte;
 public class CristallEnergia implements Recurs {
 	
 	String nom;
-	int puntsSumar;
+	double puntsSumar;
 	String tipus;
 	
 	public CristallEnergia() {
@@ -25,7 +25,7 @@ public class CristallEnergia implements Recurs {
 	}
 
 	@Override
-	public int puntsASumar() {
+	public double puntsASumar() {
 		// TODO Auto-generated method stub
 		return puntsSumar;
 	}

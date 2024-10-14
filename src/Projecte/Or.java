@@ -3,7 +3,7 @@ package Projecte;
 public class Or implements Recurs {
 
 	String nom;
-	int puntsSumar;
+	double puntsSumar;
 	String tipus;
 
 	public Or(){
@@ -25,7 +25,7 @@ public class Or implements Recurs {
 	}
 
 	@Override
-	public int puntsASumar() {
+	public double puntsASumar() {
 		// TODO Auto-generated method stub
 		return puntsSumar;
 	}
