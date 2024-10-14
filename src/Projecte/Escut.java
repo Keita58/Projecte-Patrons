@@ -5,7 +5,6 @@ public class Escut extends NauDecorator implements Equipament {
 	String nom;
 	double factor;
 	String tipus;
-
 	public Escut(Nau nau) {
 		super(nau);
 		this.nom = "Escut protector";

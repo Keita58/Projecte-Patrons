@@ -3,7 +3,7 @@ package Projecte;
 public class EnemicFactory implements JocFactory<Enemic>{
 
 	@Override
-	public Enemic create(String tipus, String nom) {
+	public Enemic create(String tipus, String nom, Nau nau) {
 		// TODO Auto-generated method stub
 		if ("Enemic".equalsIgnoreCase(tipus) && "Alien".equalsIgnoreCase(nom)) {
 			return new Alien();

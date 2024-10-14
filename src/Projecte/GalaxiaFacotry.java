@@ -30,7 +30,7 @@ public class GalaxiaFacotry implements JocFactory<Galaxia> {
 	};
 
 	@Override
-	public Galaxia create(String tipus, String nom) {
+	public Galaxia create(String tipus, String nom, Nau nau) {
 		if ("Galàxia".equalsIgnoreCase(tipus)&& "Espiral".equalsIgnoreCase(nom)) {
 			return new Espiral(nau);
 		}else if ("Galàxia".equalsIgnoreCase(tipus)&& "El·líptica".equalsIgnoreCase(nom)) {
