@@ -46,7 +46,7 @@ public class NauLleugera implements Nau, PropertyChangeListener  {
         ObjecteCapturat obj = (ObjecteCapturat) evt.getOldValue();
 
         if(obj.getObjecte() instanceof Enemic) {
-            if(obj instanceof Equipament)
+            if(obj.getNau() instanceof Equipament)
                 pA = new PuntsRestarAdapterImpl((Equipament)obj.getNau(), obj.getObjecte());
             else
                 pA = new PuntsRestarAdapterImpl(null, obj.getObjecte());
