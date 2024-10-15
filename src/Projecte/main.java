@@ -47,15 +47,16 @@ public class main {
         
         String resultat = "Nau " + naucombat + ", Kebab: " + kebab + ", escut: " + escut + ", robot: " + robot + ", espiral: " + espiral;
         System.out.println(resultat);
-        
-        ObjecteCapturat objc = new ObjecteCapturat();
+
         System.out.println("Punts del kebab: " + kebab.puntsASumar());
         System.out.println("Punts abans: " + aux.getPunts());
         //Suma punts
-        objc.Capturat(recolectorPunts, aux, kebab);
+        ObjecteCapturat objc = new ObjecteCapturat(aux, kebab);
+        recolectorPunts.setPunts(objc);
         System.out.println("Punts despres: " + aux.getPunts());
         //Resta punts
-        objc.Capturat(recolectorPunts, aux, naucombat);
+        ObjecteCapturat objc0 = new ObjecteCapturat(aux, naucombat);
+        recolectorPunts.setPunts(objc0);
         System.out.println("Punts despres: " + aux.getPunts());
         
         for(Nau nau : llistaNaus) {
@@ -76,6 +77,7 @@ public class main {
         RecolectorPunts recolectorPunts2 = new RecolectorPunts();
         Nau aux1 = nFactory.crearNau(recolectorPunts2, "Nau lleugera", 10.0, "EEEE", 10);
         Nau nau0 = new Cano(new Lenticular(aux1));
-        objc.Capturat(recolectorPunts2, nau0, kebab);
+        ObjecteCapturat objc1 = new ObjecteCapturat(nau0, naucombat);
+        recolectorPunts2.setPunts(objc1);
     }
 }

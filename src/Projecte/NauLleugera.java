@@ -43,17 +43,20 @@ public class NauLleugera implements Nau, PropertyChangeListener  {
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
         PuntsAdapter pA;
-        if((double)evt.getNewValue() < 0) {
-            pA = new PuntsRestarAdapterImpl(this, (double) evt.getNewValue());
+        ObjecteCapturat obj = (ObjecteCapturat) evt.getOldValue();
+
+        if(obj.getObjecte() instanceof Enemic) {
+            pA = new PuntsRestarAdapterImpl(obj.getNau(), obj.getObjecte());
         }
         else{
-            pA = new PuntsSumarAdapterImpl(this, (double) evt.getNewValue());
+            pA = new PuntsSumarAdapterImpl(obj.getNau(), obj.getObjecte());
         }
-        this.setPunts(this.punts + pA.getPunts());
+        setPunts(this.getPunts() + pA.getPunts());
 	}
 
 	private void setPunts(double newValue) {
 		this.punts = newValue;
+        System.out.println("Punts de la nau lleugera: " + this.punts);
 	}
 
     @Override

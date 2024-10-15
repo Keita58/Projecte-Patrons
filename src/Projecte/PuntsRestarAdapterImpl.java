@@ -3,25 +3,25 @@ package Projecte;
 public class PuntsRestarAdapterImpl implements PuntsAdapter {
 
     private Nau nau;
-    private double punts;
+    private Object obj;
     
-    public PuntsRestarAdapterImpl(Nau nau, double num){
+    public PuntsRestarAdapterImpl(Nau nau, Object o){
         this.nau = nau;
-        this.punts = num;
+        this.obj = o;
     }
     
     @Override
     public double getPunts() {
-        return multFactor(punts);
+        return multFactor();
     }
 
-    private double multFactor(double punts){
+    private double multFactor(){
         if(nau instanceof Equipament) {
-            System.out.println("Punts de la nau a restar: " + punts * ((Equipament) nau).getFactor());
-            return punts * ((Equipament) nau).getFactor();
+            System.out.println("Punts de la nau a restar: " + ((Enemic) obj).getPuntsARestar() * ((Equipament) nau).getFactor());
+            return ((Enemic) obj).getPuntsARestar() * ((Equipament) nau).getFactor();
         }
         else {
-            return punts;
+            return ((Enemic) obj).getPuntsARestar();
         }
     }
 }

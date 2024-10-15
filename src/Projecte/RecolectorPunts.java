@@ -5,12 +5,11 @@ import java.beans.PropertyChangeSupport;
 
 public class RecolectorPunts {
 
-	private double puntsNau;
+	private ObjecteCapturat objC;
 	private PropertyChangeSupport support;
 	
 	public RecolectorPunts() {
 		support = new PropertyChangeSupport(this);
-		this.puntsNau = 0;
 	}
 
 	public void addPropertyChangeListener(PropertyChangeListener pcl) {
@@ -21,8 +20,8 @@ public class RecolectorPunts {
 		support.removePropertyChangeListener(pcl);
 	}
 
-	public void setPunts(double puntsObjecte) {
-		support.firePropertyChange("punts", this.puntsNau, puntsObjecte);
-		this.puntsNau = puntsObjecte;
+	public void setPunts(ObjecteCapturat obj) {
+		support.firePropertyChange("punts", obj, this.objC);
+		this.objC = obj;
 	}
 }
