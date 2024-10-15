@@ -3,12 +3,12 @@ package Projecte;
 public class Kebab implements Recurs{
 
 	String nom;
-	int puntsSumar;
+	double puntsSumar;
 	String tipus;
 
 	public Kebab(){
 		this.nom = "Kebab";
-		this.puntsSumar = 25;
+		this.puntsSumar = 25.0;
 		this.tipus = "Recurs";
 	}
 
@@ -34,7 +34,4 @@ public class Kebab implements Recurs{
 	public String toString() {
 		return "Kebab [nom=" + nom + ", puntsSumar=" + puntsSumar + ", tipus=" + tipus + "]";
 	}
-
-	
-
 }

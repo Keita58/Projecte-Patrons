@@ -2,33 +2,6 @@ package Projecte;
 
 public class GalaxiaFacotry implements JocFactory<Galaxia> {
 
-	Nau nau = new Nau() {
-		@Override
-		public String getNom() {
-			return "";
-		}
-
-		@Override
-		public double getPunts() {
-			return 0;
-		}
-
-		@Override
-		public int getCapacitatMoviment() {
-			return 0;
-		}
-
-		@Override
-		public int getSaldoRecursos() {
-			return 0;
-		}
-
-		@Override
-		public String getDescripcio() {
-			return "";
-		}
-	};
-
 	@Override
 	public Galaxia create(String tipus, String nom, Nau nau) {
 		if ("Galàxia".equalsIgnoreCase(tipus)&& "Espiral".equalsIgnoreCase(nom)) {

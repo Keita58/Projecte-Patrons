@@ -13,18 +13,19 @@ public class main {
         NauFactory nFactory = new NauFactory();
         RecolectorPunts recolectorPunts = new RecolectorPunts(); //Observer de les naus
 
-        llistaNaus.add(nFactory.crearNau(recolectorPunts, "Nau lleugera", 10, "Llança de la llibertat", 1000));
-        System.out.println(llistaNaus.peek());
+        llistaNaus.add(nFactory.crearNau(recolectorPunts, "Nau lleugera", 10.0, "Llança de la llibertat", 1000));
+        llistaNaus.add(nFactory.crearNau(recolectorPunts, "Nau pesada", 50.0, "Escut de la democràcia", 10000));
+        llistaNaus.add(nFactory.crearNau(recolectorPunts, "Nau exploració", 5.0, "Mapa de les estrelles", 500));
 
-        llistaNaus.add(nFactory.crearNau(recolectorPunts, "Nau pesada", 50, "Escut de la democràcia", 10000));
-        System.out.println(llistaNaus.peek());
-
-        llistaNaus.add(nFactory.crearNau(recolectorPunts, "Nau exploració", 5, "Mapa de les estrelles", 500));
-        System.out.println(llistaNaus.peek());
+        Iterator<Nau> itNaus = llistaNaus.iterator();
+        while(itNaus.hasNext()) {
+            Nau nau = itNaus.next();
+            System.out.println(nau);
+        }
 
         Iterator<Nau> it = llistaNaus.iterator();
         Nau aux = it.next();
-        
+
         JocFactory jocFactory;
 
         //Ara els enemics tenen punts negatius per restar als punts del jugador
@@ -57,10 +58,6 @@ public class main {
         objc.Capturat(recolectorPunts, aux, naucombat);
         System.out.println("Punts despres: " + aux.getPunts());
         
-        Nau nau0 = new Cano(new Lenticular(new NauLleugera(10, "EEEE", 10)));
-        objc.Capturat(recolectorPunts, nau0, naucombat);
-        //System.out.println((nau0.getClass().getClasses()[2].getMethod("getPunts", Nau));
-        
         for(Nau nau : llistaNaus) {
             if(nau instanceof NauExploracio) {
                 recolectorPunts.removePropertyChangeListener((NauExploracio)nau);
@@ -75,5 +72,10 @@ public class main {
 
         Nau nau1 = new Color(new Espiral(new Escut(aux)), ColorEnum.RED);
         System.out.println(nau1.getDescripcio());
+
+        RecolectorPunts recolectorPunts2 = new RecolectorPunts();
+        Nau aux1 = nFactory.crearNau(recolectorPunts2, "Nau lleugera", 10.0, "EEEE", 10);
+        Nau nau0 = new Cano(new Lenticular(aux1));
+        objc.Capturat(recolectorPunts2, nau0, kebab);
     }
 }

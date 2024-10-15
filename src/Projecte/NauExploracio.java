@@ -17,13 +17,11 @@ public class NauExploracio implements Nau, PropertyChangeListener  {
 
     @Override
     public String getNom() {
-        // TODO Auto-generated method stub
         return nom;
     }
 
     @Override
     public double getPunts() {
-        // TODO Auto-generated method stub
         return punts;
     }
 
@@ -35,7 +33,6 @@ public class NauExploracio implements Nau, PropertyChangeListener  {
 
     @Override
     public int getSaldoRecursos() {
-        // TODO Auto-generated method stub
         return saldo;
     }
 
@@ -46,13 +43,7 @@ public class NauExploracio implements Nau, PropertyChangeListener  {
 
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
-		// TODO Auto-generated method stub
-        PuntsAdapter pA = new PuntsAdapter() {
-            @Override
-            public double getPunts() {
-                return 0;
-            }
-        };
+        PuntsAdapter pA;
         if((double)evt.getNewValue() < 0) {
             pA = new PuntsRestarAdapterImpl(this, (double) evt.getNewValue());
         }
@@ -63,13 +54,11 @@ public class NauExploracio implements Nau, PropertyChangeListener  {
 	}
 
 	private void setPunts(double newValue) {
-		// TODO Auto-generated method stub
 		this.punts = newValue;
 	}
 
     @Override
     public String getDescripcio() {
-        // TODO Auto-generated method stub
         return "Nau Exploració";
     }
 

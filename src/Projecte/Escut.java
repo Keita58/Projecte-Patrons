@@ -5,11 +5,22 @@ public class Escut extends NauDecorator implements Equipament {
 	String nom;
 	double factor;
 	String tipus;
+	Nau nau;
+
 	public Escut(Nau nau) {
 		super(nau);
 		this.nom = "Escut protector";
 		this.factor = 0.75;
 		this.tipus = "Equipament";
+		this.nau = nau;
+	}
+
+	public Nau getNau() {
+		return nau;
+	}
+
+	public void setNau(Nau nau) {
+		this.nau = nau;
 	}
 
 	@Override
@@ -38,8 +49,7 @@ public class Escut extends NauDecorator implements Equipament {
 
 	@Override
 	public double getPunts() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getPunts'");
+		return nau.getPunts();
 	}
 
 	@Override

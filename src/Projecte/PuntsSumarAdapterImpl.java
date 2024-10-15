@@ -17,10 +17,11 @@ public class PuntsSumarAdapterImpl implements PuntsAdapter{
     
     private double multFactor(){
         if(nau instanceof Equipament) {
-                return punts / ((Equipament) nau).getFactor();
+            System.out.println("Punts de la nau a sumar: " + punts / ((Equipament) nau).getFactor());
+            return punts / ((Equipament) nau).getFactor();
         }
         else {
-                return punts;
+            return punts;
         }
     }
 }

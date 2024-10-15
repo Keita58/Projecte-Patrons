@@ -4,11 +4,21 @@ public class Espiral extends NauDecorator implements Galaxia{
 
 	String nom;
 	String tipus;
+	Nau nau;
 
 	public Espiral(Nau nau) {
 		super(nau);
 		this.nom = "Espiral";
 		this.tipus = "Galàxia";
+		this.nau = nau;
+	}
+
+	public Nau getNau() {
+		return nau;
+	}
+
+	public void setNau(Nau nau) {
+		this.nau = nau;
 	}
 
 	@Override
@@ -30,8 +40,7 @@ public class Espiral extends NauDecorator implements Galaxia{
 
 	@Override
 	public double getPunts() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getPunts'");
+		return nau.getPunts();
 	}
 
 	@Override

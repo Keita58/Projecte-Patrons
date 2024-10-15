@@ -27,7 +27,6 @@ public class NauLleugera implements Nau, PropertyChangeListener  {
 
     @Override
     public int getCapacitatMoviment() {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getCapacitatMoviment'");
     }
 
@@ -43,13 +42,7 @@ public class NauLleugera implements Nau, PropertyChangeListener  {
 
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
-		// TODO Auto-generated method stub
-        PuntsAdapter pA = new PuntsAdapter() {
-            @Override
-            public double getPunts() {
-                return 0;
-            }
-        };
+        PuntsAdapter pA;
         if((double)evt.getNewValue() < 0) {
             pA = new PuntsRestarAdapterImpl(this, (double) evt.getNewValue());
         }
@@ -60,7 +53,6 @@ public class NauLleugera implements Nau, PropertyChangeListener  {
 	}
 
 	private void setPunts(double newValue) {
-		// TODO Auto-generated method stub
 		this.punts = newValue;
 	}
 

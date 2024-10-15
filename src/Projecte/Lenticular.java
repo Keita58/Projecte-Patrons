@@ -4,11 +4,21 @@ public class Lenticular extends NauDecorator implements Galaxia {
 
 	String nom;
 	String tipus;
+	Nau nau;
 
 	public Lenticular(Nau nau) {
 		super(nau);
 		this.nom = "Lenticular";
 		this.tipus = "Galàxia";
+		this.nau = nau;
+	}
+
+	public Nau getNau() {
+		return nau;
+	}
+
+	public void setNau(Nau nau) {
+		this.nau = nau;
 	}
 
 	@Override
@@ -31,8 +41,7 @@ public class Lenticular extends NauDecorator implements Galaxia {
 
 	@Override
 	public double getPunts() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getPunts'");
+		return nau.getPunts();
 	}
 
 	@Override

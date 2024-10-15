@@ -2,7 +2,7 @@ package Projecte;
 
 public class NauFactory {
 
-    public Nau crearNau(RecolectorPunts recolectorPunts, String tipus, int punts, String nom, int saldo) {
+    public Nau crearNau(RecolectorPunts recolectorPunts, String tipus, double punts, String nom, int saldo) {
         if (tipus.equalsIgnoreCase("Nau Lleugera")) {
             NauLleugera nauLleugera = new NauLleugera(punts, nom, saldo);
             recolectorPunts.addPropertyChangeListener(nauLleugera);

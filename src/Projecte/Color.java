@@ -3,10 +3,12 @@ package Projecte;
 public class Color extends NauDecorator {
 
     ColorEnum color;
+    Nau nau;
 
     public Color(Nau nau, ColorEnum color) {
         super(nau);
         this.color = color;
+        this.nau = nau;
     }
 
     @Override
@@ -16,7 +18,7 @@ public class Color extends NauDecorator {
 
     @Override
     public double getPunts() {
-        return 0;
+        return nau.getPunts();
     }
 
     @Override

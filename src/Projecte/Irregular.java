@@ -1,13 +1,24 @@
 package Projecte;
 
 public class Irregular extends NauDecorator implements Galaxia {
+
 	String nom;
-	String tipus="Galàxia";
+	String tipus;
+	Nau nau;
 
 	public Irregular(Nau nau) {
 		super(nau);
-		nom = "Irregular";
-		tipus = "Galàxia";
+		this.nom = "Irregular";
+		this.tipus = "Galàxia";
+		this.nau = nau;
+	}
+
+	public Nau getNau() {
+		return nau;
+	}
+
+	public void setNau(Nau nau) {
+		this.nau = nau;
 	}
 
 	@Override
@@ -29,8 +40,7 @@ public class Irregular extends NauDecorator implements Galaxia {
 
 	@Override
 	public double getPunts() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getPunts'");
+		return nau.getPunts();
 	}
 
 	@Override
