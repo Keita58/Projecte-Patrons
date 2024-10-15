@@ -2,11 +2,11 @@ package Projecte;
 
 public class PuntsSumarAdapterImpl implements PuntsAdapter{
     
-    private Nau nau;
+    private Equipament eq;
     private Object obj;
     
-    public PuntsSumarAdapterImpl(Nau nau, Object o){
-        this.nau = nau;
+    public PuntsSumarAdapterImpl(Equipament eq, Object o){
+        this.eq = eq;
         this.obj = o;
     }
 
@@ -16,14 +16,14 @@ public class PuntsSumarAdapterImpl implements PuntsAdapter{
     }
     
     private double multFactor(){
-        if(nau instanceof Equipament) {
+        if(eq != null) {
             if(obj instanceof Bonus) {
-                System.out.println("Punts de la nau a sumar: " + ((Bonus) obj).puntsASumar() / ((Equipament) nau).getFactor());
-                return ((Bonus) obj).puntsASumar() / ((Equipament) nau).getFactor();
+                System.out.println("Punts de la nau a sumar: " + ((Bonus) obj).puntsASumar() / eq.getFactor());
+                return ((Bonus) obj).puntsASumar() / eq.getFactor();
             }
             else {
-                System.out.println("Punts de la nau a sumar: " + ((Recurs) obj).puntsASumar() / ((Equipament) nau).getFactor());
-                return ((Recurs) obj).puntsASumar() / ((Equipament) nau).getFactor();
+                System.out.println("Punts de la nau a sumar: " + ((Recurs) obj).puntsASumar() / eq.getFactor());
+                return ((Recurs) obj).puntsASumar() / eq.getFactor();
             }
         }
         else {

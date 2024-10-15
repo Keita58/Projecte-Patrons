@@ -76,8 +76,8 @@ public class main {
 
         RecolectorPunts recolectorPunts2 = new RecolectorPunts();
         Nau aux1 = nFactory.crearNau(recolectorPunts2, "Nau lleugera", 10.0, "EEEE", 10);
-        Nau nau0 = new Cano(new Lenticular(aux1));
-        ObjecteCapturat objc1 = new ObjecteCapturat(nau0, naucombat);
+        Nau nau0 = new Irregular(new Color(new Cano(new Lenticular(aux1)), ColorEnum.RED));
+        ObjecteCapturat objc1 = new ObjecteCapturat(nau0, kebab);
         recolectorPunts2.setPunts(objc1);
     }
 }
