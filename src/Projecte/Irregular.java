@@ -1,24 +1,13 @@
 package Projecte;
 
-public class Irregular extends NauDecorator implements Galaxia {
+public class Irregular implements Galaxia {
 
 	String nom;
 	String tipus;
-	Nau nau;
 
-	public Irregular(Nau nau) {
-		super(nau);
+	public Irregular() {
 		this.nom = "Irregular";
 		this.tipus = "Galàxia";
-		this.nau = nau;
-	}
-
-	public Nau getNau() {
-		return nau;
-	}
-
-	public void setNau(Nau nau) {
-		this.nau = nau;
 	}
 
 	@Override
@@ -37,28 +26,5 @@ public class Irregular extends NauDecorator implements Galaxia {
 	public String toString() {
 		return "Irregular [nom=" + nom + ", tipus=" + tipus + "]";
 	}
-
-	@Override
-	public double getPunts() {
-		return nau.getPunts();
-	}
-
-	@Override
-	public int getCapacitatMoviment() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getCapacitatMoviment'");
-	}
-
-	@Override
-	public int getSaldoRecursos() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getSaldoRecursos'");
-	}
-
-	@Override
-	public String getDescripcio() {
-		return super.getDescripcio() + " amb " + this.getNom();
-	}
-
 	
 }

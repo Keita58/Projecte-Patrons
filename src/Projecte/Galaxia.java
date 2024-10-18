@@ -1,6 +1,6 @@
 package Projecte;
 
-public interface Galaxia extends Nau {
+public interface Galaxia{
 	String getNom();
 	String getTipus();
 }

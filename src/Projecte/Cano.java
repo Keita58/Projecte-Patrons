@@ -1,28 +1,16 @@
 package Projecte;
 
-public class Cano extends NauDecorator implements Equipament {
+public class Cano implements Equipament {
 
 	String nom;
 	double factor;
 	String tipus;
-	Nau nau;
 
-	public Cano(Nau nau) {
-		super(nau);
-		this.nau = nau;
+	public Cano() {
 		this.nom = "Canó";
 		this.factor = 0.33;
 		this.tipus = "Equipament";
 	}
-
-	public Nau getNau() {
-		return nau;
-	}
-
-	public void setNau(Nau nau) {
-		this.nau = nau;
-	}
-
 	@Override
 	public String getNom() {
 		return nom;
@@ -43,25 +31,4 @@ public class Cano extends NauDecorator implements Equipament {
 		return "Cano [nom=" + nom + ", factor=" + factor + ", tipus=" + tipus + "]";
 	}
 
-	@Override
-	public double getPunts() {
-		return nau.getPunts();
-	}
-
-	@Override
-	public int getCapacitatMoviment() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getCapacitatMoviment'");
-	}
-
-	@Override
-	public int getSaldoRecursos() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getSaldoRecursos'");
-	}
-
-	@Override
-	public String getDescripcio() {
-		return super.getDescripcio() + " amb " + this.getNom();
-	}
 }

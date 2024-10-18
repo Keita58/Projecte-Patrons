@@ -1,27 +1,19 @@
 package Projecte;
 
-public class ImantMangetic extends NauDecorator implements Equipament{
+public class ImantMangetic implements Equipament{
 
 	String nom;
 	double factor;
 	String tipus;
-	Nau nau;
 
-	public ImantMangetic(Nau nau) {
-		super(nau);
+
+	public ImantMangetic() {
 		this.nom = "Iman magnètic";
 		this.factor = 1.5;
 		this.tipus = "Equipament";
-		this.nau = nau;
+
 	}
 
-	public Nau getNau() {
-		return nau;
-	}
-
-	public void setNau(Nau nau) {
-		this.nau = nau;
-	}
 
 	@Override
 	public String getNom() {
@@ -46,28 +38,6 @@ public class ImantMangetic extends NauDecorator implements Equipament{
 		return "ImantMangetic [nom=" + nom + ", factor=" + factor + ", tipus=" + tipus + "]";
 	}
 
-	@Override
-	public double getPunts() {
-		return nau.getPunts();
-	}
-
-	@Override
-	public int getCapacitatMoviment() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getCapacitatMoviment'");
-	}
-
-	@Override
-	public int getSaldoRecursos() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getSaldoRecursos'");
-	}
-
-	@Override
-	public String getDescripcio() {
-		// TODO Auto-generated method stub
-		return super.getDescripcio()+" amb "+this.nom;
-	}
 
 	
 	

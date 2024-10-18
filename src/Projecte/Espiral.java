@@ -1,24 +1,13 @@
 package Projecte;
 
-public class Espiral extends NauDecorator implements Galaxia{
+public class Espiral implements Galaxia{
 
 	String nom;
 	String tipus;
-	Nau nau;
 
-	public Espiral(Nau nau) {
-		super(nau);
+	public Espiral() {
 		this.nom = "Espiral";
 		this.tipus = "Galàxia";
-		this.nau = nau;
-	}
-
-	public Nau getNau() {
-		return nau;
-	}
-
-	public void setNau(Nau nau) {
-		this.nau = nau;
 	}
 
 	@Override
@@ -37,30 +26,4 @@ public class Espiral extends NauDecorator implements Galaxia{
 	public String toString() {
 		return "Espiral [nom=" + nom + ", tipus=" + tipus + "]";
 	}
-
-	@Override
-	public double getPunts() {
-		return nau.getPunts();
-	}
-
-	@Override
-	public int getCapacitatMoviment() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getCapacitatMoviment'");
-	}
-
-	@Override
-	public int getSaldoRecursos() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getSaldoRecursos'");
-	}
-
-	@Override
-	public String getDescripcio() {
-		// TODO Auto-generated method stub
-		return super.getDescripcio()+" amb "+this.getNom();
-	}
-
-	
-	
 }

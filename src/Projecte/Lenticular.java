@@ -1,24 +1,13 @@
 package Projecte;
 
-public class Lenticular extends NauDecorator implements Galaxia {
+public class Lenticular implements Galaxia {
 
 	String nom;
 	String tipus;
-	Nau nau;
 
-	public Lenticular(Nau nau) {
-		super(nau);
+	public Lenticular() {
 		this.nom = "Lenticular";
 		this.tipus = "Galàxia";
-		this.nau = nau;
-	}
-
-	public Nau getNau() {
-		return nau;
-	}
-
-	public void setNau(Nau nau) {
-		this.nau = nau;
 	}
 
 	@Override
@@ -33,36 +22,8 @@ public class Lenticular extends NauDecorator implements Galaxia {
 		return tipus;
 	}
 
-	
 	@Override
 	public String toString() {
 		return "Lenticular [nom=" + nom + ", tipus=" + tipus + "]";
 	}
-
-	@Override
-	public double getPunts() {
-		return nau.getPunts();
-	}
-
-	@Override
-	public int getCapacitatMoviment() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getCapacitatMoviment'");
-	}
-
-	@Override
-	public int getSaldoRecursos() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getSaldoRecursos'");
-	}
-
-	@Override
-	public String getDescripcio() {
-		// TODO Auto-generated method stub
-		return super.getDescripcio()+" amb "+this.getNom();
-	}
-
-	
-	
-
 }

@@ -3,15 +3,15 @@ package Projecte;
 public class GalaxiaFacotry implements JocFactory<Galaxia> {
 
 	@Override
-	public Galaxia create(String tipus, String nom, Nau nau) {
+	public Galaxia create(String tipus, String nom) {
 		if ("Galàxia".equalsIgnoreCase(tipus)&& "Espiral".equalsIgnoreCase(nom)) {
-			return new Espiral(nau);
+			return new Espiral();
 		}else if ("Galàxia".equalsIgnoreCase(tipus)&& "El·líptica".equalsIgnoreCase(nom)) {
-			return new Eliptica(nau);
+			return new Eliptica();
 		}else if ("Galàxia".equalsIgnoreCase(tipus)&& "Irregular".equalsIgnoreCase(nom)) {
-			return new Irregular(nau);
+			return new Irregular();
 		}else if ("Galàxia".equalsIgnoreCase(tipus)&& "Lenticular".equalsIgnoreCase(nom)) {
-			return new Lenticular(nau);
+			return new Lenticular();
 		}
 		return null;
 	}

@@ -12,15 +12,6 @@ public class Color extends NauDecorator {
     }
 
     @Override
-    public Nau getNau() {
-        return nau;
-    }
-
-    public void setNau(Nau nau) {
-        this.nau = nau;
-    }
-
-    @Override
     public String getNom() {
         return this.color.toString();
     }

@@ -3,13 +3,13 @@ package Projecte;
 public class EquipamentFactory implements JocFactory<Equipament> {
 
 	@Override
-	public Equipament create(String tipus, String nom, Nau nau) {
+	public Equipament create(String tipus, String nom) {
 		if ("Equipament".equalsIgnoreCase(tipus) && "Escut protector".equalsIgnoreCase(nom)) {
-			return new Escut(nau);
+			return new Escut();
 		} else if ("Equipament".equalsIgnoreCase(tipus) && "Canó".equalsIgnoreCase(nom)) {
-			return new Cano(nau);
+			return new Cano();
 		} else if ("Equipament".equalsIgnoreCase(tipus) && "Imant magnètic".equalsIgnoreCase(nom)) {
-			return new ImantMangetic(nau);
+			return new ImantMangetic();
 		}
 		return null;
 	}

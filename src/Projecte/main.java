@@ -31,19 +31,19 @@ public class main {
         //Ara els enemics tenen punts negatius per restar als punts del jugador
         //Sinó només sumava punts, no restava
         jocFactory = FactoryProvider.getFactory("Enemic");
-        Enemic naucombat = (Enemic) jocFactory.create("Enemic", "Nau de combat", null);
+        Enemic naucombat = (Enemic) jocFactory.create("Enemic", "Nau de combat");
         
         jocFactory = FactoryProvider.getFactory("Recurs");
-        Recurs kebab = (Recurs) jocFactory.create("Recurs", "Kebab", null);
+        Recurs kebab = (Recurs) jocFactory.create("Recurs", "Kebab");
         
         jocFactory = FactoryProvider.getFactory("Equipament");
-        Equipament escut = (Equipament) jocFactory.create("Equipament", "Escut protector", aux);
+        Equipament escut = (Equipament) jocFactory.create("Equipament", "Escut protector");
         
         jocFactory = FactoryProvider.getFactory("Bonus");
-        Bonus robot = (Bonus) jocFactory.create("Bonus", "Robot reparador", null);
+        Bonus robot = (Bonus) jocFactory.create("Bonus", "Robot reparador");
         
         jocFactory = FactoryProvider.getFactory("Galàxia");
-        Galaxia espiral = (Galaxia) jocFactory.create("Galàxia", "Espiral", aux);
+        Galaxia espiral = (Galaxia) jocFactory.create("Galàxia", "Espiral");
         
         String resultat = "Nau " + naucombat + ", Kebab: " + kebab + ", escut: " + escut + ", robot: " + robot + ", espiral: " + espiral;
         System.out.println(resultat);
@@ -71,13 +71,13 @@ public class main {
             }
         }
 
-        Nau nau1 = new Color(new Espiral(new Escut(aux)), ColorEnum.RED);
-        System.out.println(nau1.getDescripcio());
+        //Nau nau1 = new Color(new Espiral(new Escut()), ColorEnum.RED);
+        //System.out.println(nau1.getDescripcio());
 
         RecolectorPunts recolectorPunts2 = new RecolectorPunts();
         Nau aux1 = nFactory.crearNau(recolectorPunts2, "Nau lleugera", 10.0, "EEEE", 10);
-        Nau nau0 = new Irregular(new Color(new Cano(new Lenticular(aux1)), ColorEnum.RED));
-        ObjecteCapturat objc1 = new ObjecteCapturat(nau0, kebab);
-        recolectorPunts2.setPunts(objc1);
+        //Nau nau0 = new Irregular(new Color(new Cano(new Lenticular(aux1)), ColorEnum.RED));
+        //ObjecteCapturat objc1 = new ObjecteCapturat(nau0, kebab);
+        //recolectorPunts2.setPunts(objc1);
     }
 }
