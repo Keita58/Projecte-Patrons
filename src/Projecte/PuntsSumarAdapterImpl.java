@@ -18,21 +18,21 @@ public class PuntsSumarAdapterImpl implements PuntsAdapter{
     private double multFactor(){
         if(eq != null) {
             if(obj instanceof Bonus) {
-                System.out.println("Punts de la nau a sumar: " + ((Bonus) obj).puntsASumar() / eq.getFactor());
+                System.out.println("Punts a sumar: " + ((Bonus) obj).puntsASumar() / eq.getFactor());
                 return ((Bonus) obj).puntsASumar() / eq.getFactor();
             }
             else {
-                System.out.println("Punts de la nau a sumar: " + ((Recurs) obj).puntsASumar() / eq.getFactor());
+                System.out.println("Punts a sumar: " + ((Recurs) obj).puntsASumar() / eq.getFactor());
                 return ((Recurs) obj).puntsASumar() / eq.getFactor();
             }
         }
         else {
             if(obj instanceof Bonus) {
-                System.out.println("Punts de la nau a sumar: " + ((Bonus) obj).puntsASumar());
+                System.out.println("Punts a sumar: " + ((Bonus) obj).puntsASumar());
                 return ((Bonus) obj).puntsASumar();
             }
             else {
-                System.out.println("Punts de la nau a sumar: " + ((Recurs) obj).puntsASumar());
+                System.out.println("Punts a sumar: " + ((Recurs) obj).puntsASumar());
                 return ((Recurs) obj).puntsASumar();
             }
         }

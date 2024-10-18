@@ -14,15 +14,7 @@ public class ImantMangetic extends NauDecorator implements Equipament{
 		this.tipus = "Equipament";
 		this.nau = nau;
 	}
-
-	public Nau getNau() {
-		return nau;
-	}
-
-	public void setNau(Nau nau) {
-		this.nau = nau;
-	}
-
+	
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub
@@ -39,11 +31,6 @@ public class ImantMangetic extends NauDecorator implements Equipament{
 	public double getFactor() {
 		// TODO Auto-generated method stub
 		return factor;
-	}
-
-	@Override
-	public String toString() {
-		return "ImantMangetic [nom=" + nom + ", factor=" + factor + ", tipus=" + tipus + "]";
 	}
 
 	@Override
@@ -69,6 +56,13 @@ public class ImantMangetic extends NauDecorator implements Equipament{
 		return super.getDescripcio()+" amb "+this.nom;
 	}
 
-	
-	
+	@Override
+	public String toString() {
+		return "ImantMangetic{" +
+				"nom='" + nom + '\'' +
+				", factor=" + factor +
+				", tipus='" + tipus + '\'' +
+				", nau=" + nau +
+				'}';
+	}
 }

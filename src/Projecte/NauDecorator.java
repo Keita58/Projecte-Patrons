@@ -8,7 +8,12 @@ public abstract class NauDecorator implements Nau{
         this.nau = nau;
     }
 
+    @Override
     public String getDescripcio() {
         return nau.getDescripcio();
+    }
+
+    public Nau getNau() {
+        return nau;
     }
 }

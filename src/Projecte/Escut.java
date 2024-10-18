@@ -15,14 +15,6 @@ public class Escut extends NauDecorator implements Equipament {
 		this.nau = nau;
 	}
 
-	public Nau getNau() {
-		return nau;
-	}
-
-	public void setNau(Nau nau) {
-		this.nau = nau;
-	}
-
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub
@@ -39,12 +31,6 @@ public class Escut extends NauDecorator implements Equipament {
 	public double getFactor() {
 		// TODO Auto-generated method stub
 		return factor;
-	}
-
-
-	@Override
-	public String toString() {
-		return "Escut [nom=" + nom + ", factor=" + factor + ", tipus=" + tipus + "]";
 	}
 
 	@Override
@@ -67,5 +53,15 @@ public class Escut extends NauDecorator implements Equipament {
 	@Override
 	public String getDescripcio() {
 		return super.getDescripcio() + " amb " + this.getNom();
+	}
+
+	@Override
+	public String toString() {
+		return "Escut{" +
+				"nom='" + nom + '\'' +
+				", factor=" + factor +
+				", tipus='" + tipus + '\'' +
+				", nau=" + nau +
+				'}';
 	}
 }

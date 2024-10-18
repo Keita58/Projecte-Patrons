@@ -15,14 +15,6 @@ public class Cano extends NauDecorator implements Equipament {
 		this.tipus = "Equipament";
 	}
 
-	public Nau getNau() {
-		return nau;
-	}
-
-	public void setNau(Nau nau) {
-		this.nau = nau;
-	}
-
 	@Override
 	public String getNom() {
 		return nom;
@@ -36,11 +28,6 @@ public class Cano extends NauDecorator implements Equipament {
 	@Override
 	public double getFactor() {
 		return factor;
-	}
-
-	@Override
-	public String toString() {
-		return "Cano [nom=" + nom + ", factor=" + factor + ", tipus=" + tipus + "]";
 	}
 
 	@Override
@@ -63,5 +50,15 @@ public class Cano extends NauDecorator implements Equipament {
 	@Override
 	public String getDescripcio() {
 		return super.getDescripcio() + " amb " + this.getNom();
+	}
+
+	@Override
+	public String toString() {
+		return "Cano{" +
+				"nom='" + nom + '\'' +
+				", factor=" + factor +
+				", tipus='" + tipus + '\'' +
+				", nau=" + nau +
+				'}';
 	}
 }

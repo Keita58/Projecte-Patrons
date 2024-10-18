@@ -11,7 +11,6 @@ public class Color extends NauDecorator {
         this.nau = nau;
     }
 
-    @Override
     public Nau getNau() {
         return nau;
     }
@@ -43,5 +42,10 @@ public class Color extends NauDecorator {
     @Override
     public String getDescripcio() {
         return super.getDescripcio()+" de color "+this.color;
+    }
+
+    @Override
+    public String toString() {
+        return "Color [color=" + color + ", nau=" + nau + "]";
     }
 }

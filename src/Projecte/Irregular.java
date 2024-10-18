@@ -13,14 +13,6 @@ public class Irregular extends NauDecorator implements Galaxia {
 		this.nau = nau;
 	}
 
-	public Nau getNau() {
-		return nau;
-	}
-
-	public void setNau(Nau nau) {
-		this.nau = nau;
-	}
-
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub
@@ -31,11 +23,6 @@ public class Irregular extends NauDecorator implements Galaxia {
 	public String getTipus() {
 		// TODO Auto-generated method stub
 		return tipus;
-	}
-
-	@Override
-	public String toString() {
-		return "Irregular [nom=" + nom + ", tipus=" + tipus + "]";
 	}
 
 	@Override
@@ -60,5 +47,12 @@ public class Irregular extends NauDecorator implements Galaxia {
 		return super.getDescripcio() + " amb " + this.getNom();
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Irregular{" +
+				"nom='" + nom + '\'' +
+				", tipus='" + tipus + '\'' +
+				", nau=" + nau +
+				'}';
+	}
 }

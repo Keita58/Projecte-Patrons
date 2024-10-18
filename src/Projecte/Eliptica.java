@@ -12,15 +12,7 @@ public class Eliptica extends NauDecorator implements Galaxia {
 		this.tipus = "Galàxia";
 		this.nau = nau;
 	}
-
-	public Nau getNau() {
-		return nau;
-	}
-
-	public void setNau(Nau nau) {
-		this.nau = nau;
-	}
-
+	
 	@Override
 	public String getNom() {
 		// TODO Auto-generated method stub
@@ -31,11 +23,6 @@ public class Eliptica extends NauDecorator implements Galaxia {
 	public String getTipus() {
 		// TODO Auto-generated method stub
 		return tipus;
-	}
-	
-	@Override
-	public String toString() {
-		return "Eliptica [nom=" + nom + ", tipus=" + tipus + "]";
 	}
 
 	@Override
@@ -59,5 +46,10 @@ public class Eliptica extends NauDecorator implements Galaxia {
 	public String getDescripcio() {
 		// TODO Auto-generated method stub
 		return super.getDescripcio()+" amb "+this.getNom();
+	}
+
+	@Override
+	public String toString() {
+		return "Eliptica [nom=" + nom + ", tipus=" + tipus + ", nau=" + nau + "]";
 	}
 }
