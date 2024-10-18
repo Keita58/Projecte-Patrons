@@ -76,8 +76,6 @@ public class main {
         Nau aux1 = nFactory.crearNau(recolectorPunts2, "Nau lleugera", 10.0, "EEEE", 10);
         Nau nau0 = new Irregular(new Color(new Cano(new Lenticular(new Escut(aux1))), ColorEnum.RED));
         ObjecteCapturat objc1 = new ObjecteCapturat(nau0, kebab);
-        
-        System.out.println(nau0.toString()+", "+nau0.getDescripcio());
         System.out.println("Punts de la nau abans: " + objc1.getNau().getPunts());
         recolectorPunts2.setPunts(objc1);
     }

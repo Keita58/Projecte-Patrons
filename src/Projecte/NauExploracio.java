@@ -46,15 +46,26 @@ public class NauExploracio implements Nau, PropertyChangeListener  {
         PuntsAdapter pA;
         ObjecteCapturat obj = (ObjecteCapturat) evt.getOldValue();
 
+        Nau nauActual = obj.getNau();
+        Equipament equipament = null;
+
+        while (nauActual instanceof NauDecorator){
+            if (nauActual instanceof Equipament){
+                equipament = (Equipament) nauActual;
+                break;
+            }
+            nauActual=((NauDecorator) nauActual).getNau();
+        }
+
         if(obj.getObjecte() instanceof Enemic) {
-            if(obj.getNau() instanceof Enemic)
-                pA = new PuntsRestarAdapterImpl((Equipament)obj.getNau(), obj.getObjecte());
+            if(equipament != null)
+                pA = new PuntsRestarAdapterImpl(equipament, obj.getObjecte());
             else
                 pA = new PuntsRestarAdapterImpl(null, obj.getObjecte());
         }
         else{
-            if(obj.getNau() instanceof Equipament)
-                pA = new PuntsSumarAdapterImpl((Equipament)obj.getNau(), obj.getObjecte());
+            if(equipament != null)
+                pA = new PuntsSumarAdapterImpl(equipament, obj.getObjecte());
             else
                 pA = new PuntsSumarAdapterImpl(null, obj.getObjecte());
         }
