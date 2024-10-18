@@ -3,7 +3,7 @@ package Projecte;
 public class RecursFactory implements JocFactory<Recurs> {
 
 	@Override
-	public Recurs create(String tipus, String nom, Nau nau) {
+	public Recurs create(String tipus, String nom) {
 		if ("Recurs".equalsIgnoreCase(tipus)&& "Cristall d'energia".equalsIgnoreCase(nom)) {
 			return new CristallEnergia();
 		}else if ("Recurs".equalsIgnoreCase(tipus)&& "Kebab".equalsIgnoreCase(nom)) {

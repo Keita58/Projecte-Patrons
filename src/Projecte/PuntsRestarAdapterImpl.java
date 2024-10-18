@@ -17,7 +17,7 @@ public class PuntsRestarAdapterImpl implements PuntsAdapter {
 
     private double multFactor(){
         if(eq != null) {
-            System.out.println("Punts de la nau a restar: " + ((Enemic) obj).getPuntsARestar() * eq.getFactor());
+            System.out.println("Punts a restar: " + ((Enemic) obj).getPuntsARestar() * eq.getFactor());
             return ((Enemic) obj).getPuntsARestar() * eq.getFactor();
         }
         else {

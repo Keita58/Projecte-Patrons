@@ -47,14 +47,14 @@ public class NauPesada implements Nau, PropertyChangeListener {
         ObjecteCapturat obj = (ObjecteCapturat) evt.getOldValue();
 
         if(obj.getObjecte() instanceof Enemic) {
-            if (obj.getNau() instanceof Equipament)
-                pA = new PuntsRestarAdapterImpl((Equipament)obj.getNau(), obj.getObjecte());
+            if(obj.getNau() instanceof EquipamentDecorator)
+                pA = new PuntsRestarAdapterImpl((Equipament) obj.getNau(), obj.getObjecte());
             else
                 pA = new PuntsRestarAdapterImpl(null, obj.getObjecte());
         }
         else{
-            if (obj.getNau() instanceof Equipament)
-                pA = new PuntsSumarAdapterImpl((Equipament)obj.getNau(), obj.getObjecte());
+            if(obj.getNau() instanceof EquipamentDecorator)
+                pA = new PuntsSumarAdapterImpl((Equipament) obj.getNau(), obj.getObjecte());
             else
                 pA = new PuntsSumarAdapterImpl(null, obj.getObjecte());
         }
