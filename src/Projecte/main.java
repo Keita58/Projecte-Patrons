@@ -38,7 +38,8 @@ public class main {
         
         jocFactory = FactoryProvider.getFactory("Equipament");
         Equipament escut = (Equipament) jocFactory.create("Equipament", "Escut protector");
-        
+        Equipament canon = (Equipament) jocFactory.create("Equipament", "Canó");
+
         jocFactory = FactoryProvider.getFactory("Bonus");
         Bonus robot = (Bonus) jocFactory.create("Bonus", "Robot reparador");
         
@@ -76,8 +77,13 @@ public class main {
 
         RecolectorPunts recolectorPunts2 = new RecolectorPunts();
         Nau aux1 = nFactory.crearNau(recolectorPunts2, "Nau lleugera", 10.0, "EEEE", 10);
-        //Nau nau0 = new Irregular(new Color(new Cano(new Lenticular(aux1)), ColorEnum.RED));
-        //ObjecteCapturat objc1 = new ObjecteCapturat(nau0, kebab);
-        //recolectorPunts2.setPunts(objc1);
+        jocFactory = FactoryProvider.getFactory("Equipament");
+        Equipament escut1 = (Equipament) jocFactory.create("Equipament", "Escut protector");
+        Nau n2 = (Nau) new EquipamentDecorator(aux1, escut1);
+        Nau n3 = (Nau) new Color(n2, ColorEnum.AQUA);
+        Nau n4 = (Nau) new EquipamentDecorator(n3, canon);
+        System.out.println(n4.getDescripcio());
+        ObjecteCapturat objc1 = new ObjecteCapturat(n4, naucombat);
+        recolectorPunts2.setPunts(objc1);
     }
 }

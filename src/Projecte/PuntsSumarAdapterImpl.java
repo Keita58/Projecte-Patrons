@@ -5,8 +5,11 @@ public class PuntsSumarAdapterImpl implements PuntsAdapter{
     private Equipament eq;
     private Object obj;
     
-    public PuntsSumarAdapterImpl(Equipament eq, Object o){
-        this.eq = eq;
+    public PuntsSumarAdapterImpl(EquipamentDecorator eq, Object o){
+        if(eq != null)
+            this.eq = eq.getEquipament();
+        else
+            this.eq = null;
         this.obj = o;
     }
 

@@ -5,8 +5,11 @@ public class PuntsRestarAdapterImpl implements PuntsAdapter {
     private Equipament eq;
     private Object obj;
     
-    public PuntsRestarAdapterImpl(Equipament eq, Object o){
-        this.eq = eq;
+    public PuntsRestarAdapterImpl(EquipamentDecorator eq, Object o){
+        if(eq != null)
+            this.eq = eq.getEquipament();
+        else
+            this.eq = null;
         this.obj = o;
     }
     
