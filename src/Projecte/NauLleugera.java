@@ -44,6 +44,16 @@ public class NauLleugera implements Nau, PropertyChangeListener  {
 	public void propertyChange(PropertyChangeEvent evt) {
         PuntsAdapter pA;
         ObjecteCapturat obj = (ObjecteCapturat) evt.getOldValue();
+        Nau nauActual = obj.getNau();
+        Equipament equipament = null;
+
+        while (nauActual instanceof NauDecorator){
+            if (nauActual instanceof Equipament){
+                equipament = (Equipament) nauActual;
+                break;
+            }
+            nauActual=((NauDecorator) nauActual).getNau();
+        }
 
         if(obj.getObjecte() instanceof Enemic) {
             if(equipament != null)
