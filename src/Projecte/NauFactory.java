@@ -15,7 +15,7 @@ public class NauFactory {
             System.out.println("S'ha afegit "+nauPesada.getNom()+" a l'observer.");
             return nauPesada;
         } 
-        else if (tipus.equalsIgnoreCase("Nau Exploració")) {
+        else if (tipus.equalsIgnoreCase("Nau Exploracio")) {
             NauExploracio nauExploracio = new NauExploracio(punts, nom, saldo);
             recolectorPunts.addPropertyChangeListener(nauExploracio);
             System.out.println("S'ha afegit "+nauExploracio.getNom()+" a l'observer.");

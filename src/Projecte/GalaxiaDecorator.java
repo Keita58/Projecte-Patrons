@@ -1,18 +1,24 @@
 package Projecte;
 
-public class GalaxiaDecorator extends NauDecorator{
+public class GalaxiaDecorator extends NauDecorator implements Comparable<Nau>{
 
     Galaxia galaxia;
     Nau nau;
     
-    public GalaxiaDecorator(Nau nau) {
+    public GalaxiaDecorator(Nau nau, Galaxia galaxia) {
         super(nau);
         this.nau = nau;
+        this.galaxia = galaxia;
+    }
+
+    @Override
+    public int compareTo(Nau o) {
+        return this.nau.getNom().compareTo(o.getNom());
     }
 
     @Override
     public String getNom() {
-        return "";
+        return nau.getNom();
     }
 
     @Override
@@ -27,7 +33,7 @@ public class GalaxiaDecorator extends NauDecorator{
 
     @Override
     public int getSaldoRecursos() {
-        return 0;
+        return nau.getSaldoRecursos();
     }
 
     @Override
@@ -39,7 +45,8 @@ public class GalaxiaDecorator extends NauDecorator{
         return " amb " + galaxia;
     }
 
+    @Override
     public Nau getNau() {
-        return nau;
+        return super.getNau();
     }
 }

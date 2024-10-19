@@ -1,13 +1,22 @@
 package Projecte;
 
-public class EquipamentDecorator extends NauDecorator{
+public class EquipamentDecorator extends NauDecorator implements Comparable<Nau>{
 
     Equipament equipament;
     Nau nau;
 
     public EquipamentDecorator(Nau nau, Equipament equipament) {
         super(nau);
-        this.equipament=equipament;
+        this.equipament = equipament;
+        this.nau = nau;
+    }
+
+    @Override
+    public Nau getNau() {
+        return super.getNau();
+    }
+
+    public void setNau(Nau nau) {
         this.nau = nau;
     }
 
@@ -42,5 +51,10 @@ public class EquipamentDecorator extends NauDecorator{
 
     public Equipament getEquipament() {
         return equipament;
+    }
+
+    @Override
+    public int compareTo(Nau o) {
+        return this.getNom().compareTo(o.getNom());
     }
 }

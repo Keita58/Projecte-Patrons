@@ -1,6 +1,6 @@
 package Projecte;
 
-public class Color extends NauDecorator {
+public class Color extends NauDecorator implements Comparable<Nau> {
 
     ColorEnum color;
     Nau nau;
@@ -12,8 +12,13 @@ public class Color extends NauDecorator {
     }
 
     @Override
+    public int compareTo(Nau o) {
+        return this.nau.getNom().compareTo(o.getNom());
+    }
+
+    @Override
     public String getNom() {
-        return this.color.toString();
+        return nau.getNom();
     }
 
     @Override
@@ -28,7 +33,7 @@ public class Color extends NauDecorator {
 
     @Override
     public int getSaldoRecursos() {
-        return 0;
+        return nau.getSaldoRecursos();
     }
 
     @Override

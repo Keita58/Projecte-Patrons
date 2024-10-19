@@ -3,7 +3,7 @@ package Projecte;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-public class NauExploracio implements Nau, PropertyChangeListener  {
+public class NauExploracio implements Nau, PropertyChangeListener, Comparable<Nau>  {
 
     private String nom;
     private double punts;
@@ -61,7 +61,7 @@ public class NauExploracio implements Nau, PropertyChangeListener  {
         setPunts(this.getPunts() + pA.getPunts());
 	}
 
-	private void setPunts(double newValue) {
+    private void setPunts(double newValue) {
 		this.punts = newValue;
         System.out.println("Punts de la nau d'Exploració "+this.punts);
 	}
@@ -71,4 +71,8 @@ public class NauExploracio implements Nau, PropertyChangeListener  {
         return "Nau Exploració";
     }
 
+    @Override
+    public int compareTo(Nau o) {
+        return this.getNom().compareTo(o.getNom());
+    }
 }
