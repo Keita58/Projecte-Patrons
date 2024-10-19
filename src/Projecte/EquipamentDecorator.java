@@ -57,4 +57,12 @@ public class EquipamentDecorator extends NauDecorator implements Comparable<Nau>
     public int compareTo(Nau o) {
         return this.getNom().compareTo(o.getNom());
     }
+
+    @Override
+    public String toString() {
+        return "EquipamentDecorator{" +
+                "equipament=" + equipament +
+                ", nau=" + nau +
+                '}';
+    }
 }

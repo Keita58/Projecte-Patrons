@@ -13,7 +13,8 @@ public abstract class NauDecorator implements Nau{
         return nau.getDescripcio();
     }
 
+    @Override
     public Nau getNau() {
-        return nau;
+        return nau.getNau();
     }
 }

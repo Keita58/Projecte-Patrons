@@ -6,4 +6,5 @@ public interface Nau {
 	int getCapacitatMoviment();
 	int getSaldoRecursos();
 	String getDescripcio();
+	Nau getNau();
 }

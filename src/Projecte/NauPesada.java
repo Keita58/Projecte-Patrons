@@ -47,12 +47,14 @@ public class NauPesada implements Nau, PropertyChangeListener, Comparable<Nau> {
         ObjecteCapturat obj = (ObjecteCapturat) evt.getOldValue();
 
         if(obj.getObjecte() instanceof Enemic) {
+            System.out.println("Punts de la nau abans de restar: " + this.punts);
             if(obj.getNau() != null && obj.getNau() instanceof EquipamentDecorator)
                 pA = new PuntsRestarAdapterImpl((EquipamentDecorator) obj.getNau(), obj.getObjecte());
             else
                 pA = new PuntsRestarAdapterImpl(null, obj.getObjecte());
         }
         else{
+            System.out.println("Punts de la nau abans de sumar: " + this.punts);
             if(obj.getNau() != null && obj.getNau() instanceof EquipamentDecorator)
                 pA = new PuntsSumarAdapterImpl((EquipamentDecorator) obj.getNau(), obj.getObjecte());
             else
@@ -63,8 +65,13 @@ public class NauPesada implements Nau, PropertyChangeListener, Comparable<Nau> {
 
 	private void setPunts(double newValue) {
 		this.punts = newValue;
-        System.out.println("Punts de la Nau Pesada: "+this.punts);
+        System.out.println("Punts de la Nau Pesada després del càlcul: "+this.punts);
 	}
+
+    @Override
+    public Nau getNau() {
+        return this;
+    }
 
     @Override
     public String getDescripcio() {

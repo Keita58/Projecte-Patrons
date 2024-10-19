@@ -19,6 +19,7 @@ public class RecolectorPunts {
 	}
 
 	public void setPunts(ObjecteCapturat obj) {
+		System.out.println("Objecte que arriba a l'observer: " + obj.getObjecte());
 		support.firePropertyChange("punts", obj, this.objC);
 		this.objC = obj;
 	}

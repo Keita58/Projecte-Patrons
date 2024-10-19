@@ -49,4 +49,12 @@ public class GalaxiaDecorator extends NauDecorator implements Comparable<Nau>{
     public Nau getNau() {
         return super.getNau();
     }
+
+    @Override
+    public String toString() {
+        return "GalaxiaDecorator{" +
+                "galaxia=" + galaxia +
+                ", nau=" + nau +
+                '}';
+    }
 }

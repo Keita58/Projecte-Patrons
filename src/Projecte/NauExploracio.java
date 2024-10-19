@@ -46,13 +46,16 @@ public class NauExploracio implements Nau, PropertyChangeListener, Comparable<Na
         PuntsAdapter pA;
         ObjecteCapturat obj = (ObjecteCapturat) evt.getOldValue();
 
+
         if(obj.getObjecte() instanceof Enemic) {
+            System.out.println("Punts de la nau abans de restar: " + this.punts);
             if(obj.getNau() != null && obj.getNau() instanceof EquipamentDecorator)
                 pA = new PuntsRestarAdapterImpl((EquipamentDecorator) obj.getNau(), obj.getObjecte());
             else
                 pA = new PuntsRestarAdapterImpl(null, obj.getObjecte());
         }
         else{
+            System.out.println("Punts de la nau abans de sumar: " + this.punts);
             if(obj.getNau() != null && obj.getNau() instanceof EquipamentDecorator)
                 pA = new PuntsSumarAdapterImpl((EquipamentDecorator) obj.getNau(), obj.getObjecte());
             else
@@ -63,12 +66,17 @@ public class NauExploracio implements Nau, PropertyChangeListener, Comparable<Na
 
     private void setPunts(double newValue) {
 		this.punts = newValue;
-        System.out.println("Punts de la nau d'Exploració "+this.punts);
+        System.out.println("Punts de la Nau d'Exploració després del càlcul: " + this.punts);
 	}
 
     @Override
     public String getDescripcio() {
         return "Nau Exploració";
+    }
+
+    @Override
+    public Nau getNau() {
+        return this;
     }
 
     @Override

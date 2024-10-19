@@ -73,7 +73,7 @@ public class main {
         RecolectorPunts recolectorPunts2 = new RecolectorPunts();
         Nau aux1 = nFactory.crearNau(recolectorPunts2, "Nau exploracio", 5.0, "Mincron", 100);
         jocFactory = FactoryProvider.getFactory("Equipament");
-        Equipament canon = (Equipament) jocFactory.create("Equipament", "Canó");
+        Equipament canon = (Equipament) jocFactory.create("Equipament", "Cano");
         Equipament escut1 = (Equipament) jocFactory.create("Equipament", "Escut protector");
         Nau n2 = new EquipamentDecorator(aux1, escut1);
         Nau n3 = new Color(n2, ColorEnum.AQUA);

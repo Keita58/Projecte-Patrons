@@ -20,10 +20,13 @@ public class PuntsRestarAdapterImpl implements PuntsAdapter {
 
     private double multFactor(){
         if(eq != null) {
-            System.out.println("Punts a restar: " + ((Enemic) obj).getPuntsARestar() * eq.getFactor());
+            System.out.println("Punts a restar: " + ((Enemic) obj).getPuntsARestar());
+            System.out.println("Factor a multiplicar: " + eq.getFactor());
             return ((Enemic) obj).getPuntsARestar() * eq.getFactor();
         }
         else {
+            System.out.println("Punts a restar: " + ((Enemic) obj).getPuntsARestar());
+            System.out.println("Sense factor a aplicar");
             return ((Enemic) obj).getPuntsARestar();
         }
     }

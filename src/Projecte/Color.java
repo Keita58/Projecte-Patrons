@@ -37,7 +37,20 @@ public class Color extends NauDecorator implements Comparable<Nau> {
     }
 
     @Override
+    public Nau getNau() {
+        return super.getNau();
+    }
+
+    @Override
     public String getDescripcio() {
         return super.getDescripcio()+" de color "+this.color;
+    }
+
+    @Override
+    public String toString() {
+        return "Color{" +
+                "color=" + color +
+                ", nau=" + nau +
+                '}';
     }
 }
