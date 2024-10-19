@@ -2,6 +2,10 @@ package Projecte;
 
 public class Color extends NauDecorator implements Comparable<Nau> {
 
+    /**
+     * Decorador de la nau on li afegeix un color.
+     */
+
     ColorEnum color;
     Nau nau;
 
@@ -11,9 +15,13 @@ public class Color extends NauDecorator implements Comparable<Nau> {
         this.nau = nau;
     }
 
+    /**
+     * @param o Nau a comparar amb l'actual
+     * @return retorna l'ordre de les naus segons el nom de manera ascendent.
+     */
     @Override
     public int compareTo(Nau o) {
-        return this.nau.getNom().compareTo(o.getNom());
+        return super.getNau().getNom().compareTo(o.getNom());
     }
 
     @Override
@@ -36,14 +44,20 @@ public class Color extends NauDecorator implements Comparable<Nau> {
         return nau.getSaldoRecursos();
     }
 
+    /**
+     * @return retorna la nau a la qual està equipada.
+     */
     @Override
     public Nau getNau() {
         return super.getNau();
     }
 
+    /**
+     * @return retorna la descripció de la nau a la qual està equipat.
+     */
     @Override
     public String getDescripcio() {
-        return super.getDescripcio()+" de color "+this.color;
+        return super.getDescripcio() + " de color " + this.color;
     }
 
     @Override

@@ -18,6 +18,11 @@ public class PuntsRestarAdapterImpl implements PuntsAdapter {
         return multFactor();
     }
 
+    /**
+     * Funció que mira si hi ha un equipament i si n'hi ha nultiplica el seu facot pels punts a restar de l'enemic (l'objecte).
+     * @return retorna la multiplicació entre el factor de l'equipament i els punts a restar de l'enemic.
+     * Si no hi ha equipament retorna només els punts a restar de l'enemic.
+     */
     private double multFactor(){
         if(eq != null) {
             System.out.println("Punts a restar: " + ((Enemic) obj).getPuntsARestar());

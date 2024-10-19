@@ -17,7 +17,12 @@ public class PuntsSumarAdapterImpl implements PuntsAdapter{
     public double getPunts() {
         return multFactor();
     }
-    
+
+    /**
+     * Funció que calcula la suma de punts a la nau depenent de l'objecte que hagi agafat la nau.
+     * Si aquesta nau té un equipament, els punts a sumar es multipliquen pel factor d'aquest Equipament.
+     * @return El càlcul dels punts, tant si és necessari multiplicar el factor com no
+     */
     private double multFactor(){
         if(eq != null) {
             if(obj instanceof Bonus) {

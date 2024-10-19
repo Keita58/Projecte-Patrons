@@ -2,6 +2,10 @@ package Projecte;
 
 public class GalaxiaDecorator extends NauDecorator implements Comparable<Nau>{
 
+    /**
+     * Decorador de la nau on li afegeix una galàxia.
+     */
+
     Galaxia galaxia;
     Nau nau;
     
@@ -11,6 +15,10 @@ public class GalaxiaDecorator extends NauDecorator implements Comparable<Nau>{
         this.galaxia = galaxia;
     }
 
+    /**
+     * @param o the object to be compared.
+     * @return retorna l'ordre de les naus segons el nom de manera ascendent.
+     */
     @Override
     public int compareTo(Nau o) {
         return this.nau.getNom().compareTo(o.getNom());
@@ -36,6 +44,9 @@ public class GalaxiaDecorator extends NauDecorator implements Comparable<Nau>{
         return nau.getSaldoRecursos();
     }
 
+    /**
+     * @return retorna la descripció de la nau a la qual està equipat.
+     */
     @Override
     public String getDescripcio() {
         return super.getDescripcio() + getGalaxia();
@@ -45,6 +56,9 @@ public class GalaxiaDecorator extends NauDecorator implements Comparable<Nau>{
         return " amb " + galaxia;
     }
 
+    /**
+     * @return retorna la nau a la qual està equipada.
+     */
     @Override
     public Nau getNau() {
         return super.getNau();

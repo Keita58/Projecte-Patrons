@@ -27,7 +27,6 @@ public class NauExploracio implements Nau, PropertyChangeListener, Comparable<Na
 
     @Override
     public int getCapacitatMoviment() {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getCapacitatMoviment'");
     }
 
@@ -41,6 +40,13 @@ public class NauExploracio implements Nau, PropertyChangeListener, Comparable<Na
         return "NauExploracio [nom=" + nom + ", punts=" + punts + ", saldo=" + saldo + "]";
     }
 
+
+    /**
+     * Funció que es subscriu a l'observer i on s'aplica l'adapter, és a dir, la lògica dels punts.
+     * Mirem si l'objecte, és a dir la nau, té un equipament, i si el té entra al adapter depenent de si l'objecte que arriba
+     *
+     * @param evt Rep un ObjecteCapturat
+     */
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
         PuntsAdapter pA;
@@ -74,11 +80,18 @@ public class NauExploracio implements Nau, PropertyChangeListener, Comparable<Na
         return "Nau Exploració";
     }
 
+    /**
+     * @return Retorna a si mateixa per a que funcioni correctament el Decorator
+     */
     @Override
     public Nau getNau() {
         return this;
     }
 
+    /**
+     * @param o Nau a comparar amb l'actual
+     * @return retorna l'ordre de les naus segons el nom de manera ascendent.
+     */
     @Override
     public int compareTo(Nau o) {
         return this.getNom().compareTo(o.getNom());

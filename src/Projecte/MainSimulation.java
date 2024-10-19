@@ -105,13 +105,13 @@ public class MainSimulation {
             if (rs != null) {
                 try {
                     rs.close();
-                } catch (SQLException sqlEx) { } // ignore
+                } catch (SQLException sqlEx) { }
                 rs = null;
             }
             if (st != null) {
                 try {
                     st.close();
-                } catch (SQLException sqlEx) { } // ignore
+                } catch (SQLException sqlEx) { }
                 st = null;
             }
 
@@ -258,13 +258,13 @@ public class MainSimulation {
                     if (rs != null) {
                         try {
                             rs.close();
-                        } catch (SQLException sqlEx) { } // ignore
+                        } catch (SQLException sqlEx) { }
                         rs = null;
                     }
                     if (st != null) {
                         try {
                             st.close();
-                        } catch (SQLException sqlEx) { } // ignore
+                        } catch (SQLException sqlEx) { }
                         st = null;
                     }
                 }
@@ -303,13 +303,13 @@ public class MainSimulation {
                     if (rs != null) {
                         try {
                             rs.close();
-                        } catch (SQLException sqlEx) { } // ignore
+                        } catch (SQLException sqlEx) { }
                         rs = null;
                     }
                     if (st != null) {
                         try {
                             st.close();
-                        } catch (SQLException sqlEx) { } // ignore
+                        } catch (SQLException sqlEx) { }
                         st = null;
                     }
                 }

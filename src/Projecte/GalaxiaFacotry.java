@@ -2,6 +2,13 @@ package Projecte;
 
 public class GalaxiaFacotry implements JocFactory<Galaxia> {
 
+	/**
+	 * Factory que ens crea diferents galàxies segons el nom que li facilitem.
+	 *
+	 * @param tipus El tipus de l'objecte, que en aquest cas sempre serà Galàxia
+	 * @param nom El nom de la Galàxia.
+	 * @return Si el tipus o el nom és incorrecte retorna null, és a dir, no fa res.
+	 */
 	@Override
 	public Galaxia create(String tipus, String nom) {
 		if ("Galàxia".equalsIgnoreCase(tipus)&& "Espiral".equalsIgnoreCase(nom)) {

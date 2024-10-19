@@ -12,13 +12,11 @@ public class Lenticular implements Galaxia {
 
 	@Override
 	public String getNom() {
-		// TODO Auto-generated method stub
 		return nom;
 	}
 
 	@Override
 	public String getTipus() {
-		// TODO Auto-generated method stub
 		return tipus;
 	}
 

@@ -11,6 +11,7 @@ public class Cano implements Equipament {
 		this.factor = 0.33;
 		this.tipus = "Equipament";
 	}
+
 	@Override
 	public String getNom() {
 		return nom;
@@ -30,5 +31,4 @@ public class Cano implements Equipament {
 	public String toString() {
 		return "Cano [nom=" + nom + ", factor=" + factor + ", tipus=" + tipus + "]";
 	}
-
 }

@@ -2,6 +2,10 @@ package Projecte;
 
 public class FactoryProvider {
 
+	/**
+	 * @param choice String que ens permet seleccionat el tipus de factory que volem utilitzar.
+	 * @return Retorna la factory demanada per l'string
+	 */
 	public static JocFactory getFactory(String choice){
 		if ("Enemic".equalsIgnoreCase(choice)) {
 			return new EnemicFactory();

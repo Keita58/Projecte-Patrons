@@ -2,6 +2,9 @@ package Projecte;
 
 public class EquipamentDecorator extends NauDecorator implements Comparable<Nau>{
 
+    /**
+     * Decorador de la nau on li afegeix un Equipament.
+     */
     Equipament equipament;
     Nau nau;
 
@@ -11,6 +14,9 @@ public class EquipamentDecorator extends NauDecorator implements Comparable<Nau>
         this.nau = nau;
     }
 
+    /**
+     * @return retorna la nau a la qual està equipada.
+     */
     @Override
     public Nau getNau() {
         return super.getNau();
@@ -40,22 +46,29 @@ public class EquipamentDecorator extends NauDecorator implements Comparable<Nau>
         return nau.getSaldoRecursos();
     }
 
+    /**
+     * @return retorna la descripció de la nau a la qual està equipat.
+     */
     @Override
     public String getDescripcio() {
         return super.getDescripcio() + posarEquipament();
     }
 
     public String posarEquipament() {
-        return " amb "+equipament;
+        return " amb " + equipament;
     }
 
     public Equipament getEquipament() {
         return equipament;
     }
 
+    /**
+     * @param o Nau amb la que comparem l'actual
+     * @return Retorna l'ordre de les naus segons el nom de manera ascendent
+     */
     @Override
     public int compareTo(Nau o) {
-        return this.getNom().compareTo(o.getNom());
+        return super.getNau().getNom().compareTo(o.getNom());
     }
 
     @Override

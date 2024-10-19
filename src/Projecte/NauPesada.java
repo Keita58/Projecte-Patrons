@@ -41,6 +41,12 @@ public class NauPesada implements Nau, PropertyChangeListener, Comparable<Nau> {
         return "NauPesada [nom=" + nom + ", punts=" + punts + ", saldo=" + saldo + "]";
     }
 
+    /**
+     * Funció que es subscriu a l'observer i on s'aplica l'adapter, és a dir, la lògica dels punts.
+     * Mirem si l'objecte, és a dir la nau, té un equipament, i si el té entra al adapter.
+     *
+     * @param evt ObjecteCapturat que rep de la funció RecolectorPunts
+     */
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
         PuntsAdapter pA;
@@ -68,6 +74,9 @@ public class NauPesada implements Nau, PropertyChangeListener, Comparable<Nau> {
         System.out.println("Punts de la Nau Pesada després del càlcul: "+this.punts);
 	}
 
+    /**
+     * @return Retorna a si mateixa per a que funcioni correctament el Decorator
+     */
     @Override
     public Nau getNau() {
         return this;
@@ -78,6 +87,10 @@ public class NauPesada implements Nau, PropertyChangeListener, Comparable<Nau> {
         return "Nau pesada";
     }
 
+    /**
+     * @param o Nau a comparar amb l'actual
+     * @return retorna l'ordre de les naus segons el nom de manera ascendent.
+     */
     @Override
     public int compareTo(Nau o) {
         return this.getNom().compareTo(o.getNom());
