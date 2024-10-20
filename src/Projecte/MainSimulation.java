@@ -220,8 +220,6 @@ public class MainSimulation {
             }
         }
 
-        Iterator<Nau> it = llistaNaus.iterator();
-
         System.out.println("-------------------------------------");
         System.out.println("Naus abans d'eliminar i actualitzar les corresponents: ");
         for (Nau nausbeforeupdate: llistaNaus){
@@ -231,90 +229,90 @@ public class MainSimulation {
             System.out.println();
         }
 
-        while(it.hasNext()) {
-            Nau nau = it.next();
-            String nauborrar = "";
-            if (nau.getNau().getPunts() < 400) {
-                nauborrar = nau.getNau().getNom();
-                it.remove();
-                try {
-                    conn = DriverManager.getConnection("jdbc:mysql://localhost/videojocjdbc?" + "user=root&password=super3");
 
-                    String borrarSql ="DELETE FROM jugador WHERE nom = ?";
-                    PreparedStatement ps = conn.prepareStatement(borrarSql);
-                    ps.setString(1, nauborrar);
-                    ps.executeUpdate();
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/videojocjdbc?" + "user=root&password=super3");
+            st = conn.createStatement();
+            rs = st.executeQuery("SELECT * FROM jugador");
 
-                    st = conn.createStatement();
-                    rs = st.executeQuery("SELECT * FROM jugador");
-                }
-                catch(SQLException ex){
-                    // handle any errors
-                    System.out.println("SQLException: " + ex.getMessage());
-                    System.out.println("SQLState: " + ex.getSQLState());
-                    System.out.println("VendorError: " + ex.getErrorCode());
-                }
-                finally {
-                    if (rs != null) {
-                        try {
-                            rs.close();
-                        } catch (SQLException sqlEx) { }
-                        rs = null;
-                    }
-                    if (st != null) {
-                        try {
-                            st.close();
-                        } catch (SQLException sqlEx) { }
-                        st = null;
-                    }
-                }
-            }
-            else {
-                try {
-                    conn = DriverManager.getConnection("jdbc:mysql://localhost/videojocjdbc?" + "user=root&password=super3");
-                    st = conn.createStatement();
-                    rs = st.executeQuery("SELECT * FROM jugador");
-
-                    String updatear = "UPDATE jugador SET punts = ? WHERE nom = ?";
-                    PreparedStatement ps = conn.prepareStatement(updatear);
-
-                    for (Nau nau2: llistaNaus) {
-                        double naupunts = 0;
-                        String nomNau = "";
-                        while(rs.next()) {
-                            if (rs.getString("nom").equals(nau2.getNom())) {
-                                naupunts = nau2.getNau().getPunts();
-                                nomNau = nau2.getNau().getNom();
-                                ps.setDouble(1, naupunts);
-                                ps.setString(2, nomNau);
-                                break;
-                            }
-                        }
-                    }
-                    ps.executeUpdate();
-                    rs = st.executeQuery("SELECT * FROM jugador");
-                }
-                catch(SQLException ex){
-                    System.out.println("SQLException: " + ex.getMessage());
-                    System.out.println("SQLState: " + ex.getSQLState());
-                    System.out.println("VendorError: " + ex.getErrorCode());
-                }
-                finally {
-                    if (rs != null) {
-                        try {
-                            rs.close();
-                        } catch (SQLException sqlEx) { }
-                        rs = null;
-                    }
-                    if (st != null) {
-                        try {
-                            st.close();
-                        } catch (SQLException sqlEx) { }
-                        st = null;
+            for (Nau nau2 : llistaNaus) {
+                while (rs.next()) {
+                    if (rs.getString("nom").equals(nau2.getNau().getNom())) {
+                        String updatear = "UPDATE jugador SET punts = ? WHERE nom = ?";
+                        PreparedStatement ps = conn.prepareStatement(updatear);
+                        ps.setDouble(1, nau2.getNau().getPunts());
+                        ps.setString(2, nau2.getNau().getNom());
+                        ps.executeUpdate();
+                        break;
                     }
                 }
             }
         }
+        catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        finally {
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException sqlEx) {
+                }
+                rs = null;
+            }
+            if (st != null) {
+                try {
+                    st.close();
+                } catch (SQLException sqlEx) {
+                }
+                st = null;
+            }
+        }
+
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/videojocjdbc?" + "user=root&password=super3");
+            st = conn.createStatement();
+            rs = st.executeQuery("SELECT * FROM jugador");
+
+            while (rs.next()) {
+                if (rs.getDouble("punts") < 400) {
+                    Iterator<Nau> it = llistaNaus.iterator();
+                    while(it.hasNext()) {
+                        Nau nau = it.next();
+                        if(nau.getNau().getNom().equals(rs.getString("nom"))) {
+                            it.remove();
+                            break;
+                        }
+                    }
+                    String borrarSql ="DELETE FROM jugador WHERE nom = ?";
+                    PreparedStatement ps = conn.prepareStatement(borrarSql);
+                    ps.setString(1, rs.getString("nom"));
+                    ps.executeUpdate();
+                }
+            }
+        }
+        catch(SQLException ex){
+            // handle any errors
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        finally {
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException sqlEx) { }
+                rs = null;
+            }
+            if (st != null) {
+                try {
+                    st.close();
+                } catch (SQLException sqlEx) { }
+                st = null;
+            }
+        }
+
         System.out.println("-------------------------------------");
         System.out.println("Naus després d'eliminar i actualitzar les corresponents: ");
         for(Nau nauDelete : llistaNaus) {

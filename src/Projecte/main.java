@@ -7,15 +7,17 @@ public class main {
     public static void main(String[] args) throws SQLException {
 
         //Punt 1
+        RecolectorPunts recolectorPunts = new RecolectorPunts(); //Observer de les naus
+        RecolectorPunts recolectorPunts2 = new RecolectorPunts(); //Observer de les naus
+        RecolectorPunts recolectorPunts3 = new RecolectorPunts(); //Observer de les naus
+
         Queue<Nau> llistaNaus = new LinkedList<>();
 
         NauFactory nFactory = new NauFactory();
-        RecolectorPunts recolectorPunts = new RecolectorPunts(); //Observer de les naus
-
         //Creem les naus amb la factory.
         llistaNaus.add(nFactory.crearNau(recolectorPunts, "Nau lleugera", 10.0, "Llança de la llibertat", 1000));
-        llistaNaus.add(nFactory.crearNau(recolectorPunts, "Nau pesada", 50.0, "Escut de la democràcia", 10000));
-        llistaNaus.add(nFactory.crearNau(recolectorPunts, "Nau exploració", 5.0, "Mapa de les estrelles", 500));
+        llistaNaus.add(nFactory.crearNau(recolectorPunts2, "Nau pesada", 50.0, "Escut de la democràcia", 10000));
+        llistaNaus.add(nFactory.crearNau(recolectorPunts3, "Nau exploracio", 5.0, "Mapa de les estrelles", 500));
 
         Iterator<Nau> itNaus = llistaNaus.iterator();
         while(itNaus.hasNext()) {
@@ -65,22 +67,22 @@ public class main {
 
         //Desubscribim les naus de l'observer.
         for(Nau nau : llistaNaus) {
-            if(nau instanceof NauExploracio) {
-                recolectorPunts.removePropertyChangeListener((NauExploracio)nau);
+            if(nau.getNau() instanceof NauExploracio) {
+                recolectorPunts3.removePropertyChangeListener((NauExploracio)nau.getNau());
             }
-            else if(nau instanceof NauLleugera) {
-                recolectorPunts.removePropertyChangeListener((NauLleugera)nau);
+            else if(nau.getNau() instanceof NauLleugera) {
+                recolectorPunts.removePropertyChangeListener((NauLleugera)nau.getNau());
             }
-            else if(nau instanceof NauPesada) {
-                recolectorPunts.removePropertyChangeListener((NauPesada)nau);
+            else if(nau.getNau() instanceof NauPesada) {
+                recolectorPunts2.removePropertyChangeListener((NauPesada)nau.getNau());
             }
         }
 
         //Punt 4 i 5
         //Creem un observer nou per la nau que crearem a continuació.
         //Necessitem un de nou perquè si no estaríem cridant a la nau anterior
-        RecolectorPunts recolectorPunts2 = new RecolectorPunts();
-        Nau aux1 = nFactory.crearNau(recolectorPunts2, "Nau exploracio", 5.0, "Mincron", 100);
+        RecolectorPunts recolectorPunts4 = new RecolectorPunts();
+        Nau aux1 = nFactory.crearNau(recolectorPunts4, "Nau exploracio", 5.0, "Mincron", 100);
         jocFactory = FactoryProvider.getFactory("Equipament");
         Equipament canon = (Equipament) jocFactory.create("Equipament", "Cano");
         Equipament escut1 = (Equipament) jocFactory.create("Equipament", "Escut protector");
@@ -90,22 +92,24 @@ public class main {
         Nau n3 = new Color(n2, ColorEnum.AQUA);
         Nau n4 = new EquipamentDecorator(n3, canon);
         System.out.println(n4.getDescripcio());
+        System.out.println(n4.getNau());
 
         //La nau amb decorators es troba amb un enemic (nau de combat)
         ObjecteCapturat objc1 = new ObjecteCapturat(n4, naucombat);
-        recolectorPunts2.setPunts(objc1);
+        recolectorPunts4.setPunts(objc1);
 
         //Punt 6
 
         //Creem diferents naus amb decorators i les afegim a una cua.
-
-        Nau aux2 = nFactory.crearNau(recolectorPunts2, "Nau pesada", 500.0, "Rocinante", 80);
+        RecolectorPunts recolectorPunts5 = new RecolectorPunts();
+        Nau aux2 = nFactory.crearNau(recolectorPunts5, "Nau pesada", 500.0, "Rocinante", 80);
         Galaxia lenticular = (Galaxia) jocFactory.create("Galàxia", "Lenticular");
         Nau n5 = new GalaxiaDecorator(aux2, espiral);
         Nau n6 = new EquipamentDecorator(n5, canon);
         Nau n7 = new Color(n6, ColorEnum.HOTPINK);
 
-        Nau aux3 = nFactory.crearNau(recolectorPunts2, "Nau lleugera", 10.0, "Urithiru", 10);
+        RecolectorPunts recolectorPunts6 = new RecolectorPunts();
+        Nau aux3 = nFactory.crearNau(recolectorPunts6, "Nau lleugera", 10.0, "Urithiru", 10);
         Nau n8 = new Color(aux3, ColorEnum.FUCHSIA);
         Nau n9 = new EquipamentDecorator(n8, escut1);
         Nau n10 = new GalaxiaDecorator(n9, lenticular);
@@ -127,26 +131,10 @@ public class main {
 
             for (Nau nau: llistaNausDecorator) {
                 while(rs.next()) {
-
                     //Mirem que la nau no estigui ja posada a la base de dades.
-
-                    if (nau instanceof EquipamentDecorator){
-                        if (!rs.getString("nom").equals(nau.getNau().getNom())) {
-                            trobat = true;
-                            break;
-                        }
-                    }
-                    else if (nau instanceof GalaxiaDecorator) {
-                        if (!rs.getString("nom").equals(nau.getNau().getNom())) {
-                            trobat = true;
-                            break;
-                        }
-                    }
-                    else if (nau instanceof Color){
-                        if (!rs.getString("nom").equals(nau.getNau().getNom())) {
-                            trobat = true;
-                            break;
-                        }
+                    if (!rs.getString("nom").equals(nau.getNau().getNom())) {
+                        trobat = true;
+                        break;
                     }
                 }
 
@@ -155,21 +143,9 @@ public class main {
                 if(!trobat) {
                     String sqlInsertar="INSERT INTO jugador (nom, punts, saldo) VALUES (?, ?, ?)";
                     PreparedStatement ps = conn.prepareStatement(sqlInsertar);
-                    if(nau instanceof EquipamentDecorator) {
-                        ps.setString(1, nau.getNau().getNom());
-                        ps.setDouble(2, 0);
-                        ps.setDouble(3, nau.getNau().getSaldoRecursos());
-                    }
-                    else if(nau instanceof GalaxiaDecorator) {
-                        ps.setString(1, nau.getNau().getNom());
-                        ps.setDouble(2, 0);
-                        ps.setDouble(3, nau.getNau().getSaldoRecursos());
-                    }
-                    else if(nau instanceof Color) {
-                        ps.setString(1, nau.getNau().getNom());
-                        ps.setDouble(2, 0);
-                        ps.setDouble(3, nau.getNau().getSaldoRecursos());
-                    }
+                    ps.setString(1, nau.getNau().getNom());
+                    ps.setDouble(2, 0);
+                    ps.setDouble(3, nau.getNau().getSaldoRecursos());
                     ps.executeUpdate();
                 }
                 trobat = false;
@@ -179,6 +155,7 @@ public class main {
             rs = st.executeQuery("SELECT * FROM jugador");
 
             //Imprimim el resultat del select.
+            System.out.println("Naus després de l'insert:");
             while(rs.next()){
                 System.out.println("ID: " + rs.getInt("idjugador"));
                 System.out.println("Nom: " + rs.getString("nom"));
@@ -215,72 +192,125 @@ public class main {
 
         for(Nau nau : llistaNausDecorator) {
             ObjecteCapturat objc2 = new ObjecteCapturat(nau, kebab);
-            recolectorPunts2.setPunts(objc2);
             ObjecteCapturat objc3 = new ObjecteCapturat(nau, naucombat);
-            recolectorPunts2.setPunts(objc3);
             ObjecteCapturat objc4 = new ObjecteCapturat(nau, meteorit);
-            recolectorPunts2.setPunts(objc4);
             ObjecteCapturat objc5 = new ObjecteCapturat(nau, robot);
-            recolectorPunts2.setPunts(objc5);
+            if(nau.getNau() instanceof NauExploracio) {
+                recolectorPunts4.setPunts(objc2);
+                recolectorPunts4.setPunts(objc3);
+                recolectorPunts4.setPunts(objc4);
+                recolectorPunts4.setPunts(objc5);
+            }
+            else if(nau.getNau() instanceof NauLleugera) {
+                recolectorPunts6.setPunts(objc2);
+                recolectorPunts6.setPunts(objc3);
+                recolectorPunts6.setPunts(objc4);
+                recolectorPunts6.setPunts(objc5);
+            }
+            else if(nau.getNau() instanceof NauPesada) {
+                recolectorPunts5.setPunts(objc2);
+                recolectorPunts5.setPunts(objc3);
+                recolectorPunts5.setPunts(objc4);
+                recolectorPunts5.setPunts(objc5);
+            }
         }
 
-        Iterator<Nau> it2 = llistaNausDecorator.iterator();
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/videojocjdbc?" + "user=root&password=super3");
+            st = conn.createStatement();
+            rs = st.executeQuery("SELECT * FROM jugador");
 
-        while(it2.hasNext()) {
-            Nau nau = it2.next();
-            String nauborrar = "";
-
-            //Mirem si els punts de la nau són més petits de 400 i si ho són fem un delete de la nau.
-            if (nau.getNau().getPunts() < 400){
-                nauborrar = nau.getNau().getNom();
-                it2.remove();
-                try {
-                    conn = DriverManager.getConnection("jdbc:mysql://localhost/videojocjdbc?" + "user=root&password=super3");
-
-                    String borrarSql ="DELETE FROM jugador WHERE nom = ?";
-                    PreparedStatement ps = conn.prepareStatement(borrarSql);
-                    ps.setString(1, nauborrar);
-                    ps.executeUpdate();
-
-                    st = conn.createStatement();
-                    rs = st.executeQuery("SELECT * FROM jugador");
-                    System.out.println("Naus després del delete: ");
-                    while(rs.next()){
-                        System.out.println("ID: " + rs.getInt("idjugador"));
-                        System.out.println("Nom: " + rs.getString("nom"));
-                        System.out.println("Saldo: " + rs.getString("saldo"));
-                        System.out.println("Punts: " + rs.getString("punts"));
-                    }
-                }
-                catch(SQLException ex){
-                    // handle any errors
-                    System.out.println("SQLException: " + ex.getMessage());
-                    System.out.println("SQLState: " + ex.getSQLState());
-                    System.out.println("VendorError: " + ex.getErrorCode());
-                }
-                finally {
-                    if (rs != null) {
-                        try {
-                            rs.close();
-                        } catch (SQLException sqlEx) { } // ignore
-                        rs = null;
-                    }
-                    if (st != null) {
-                        try {
-                            st.close();
-                        } catch (SQLException sqlEx) { } // ignore
-                        st = null;
+            for (Nau nau2 : llistaNausDecorator) {
+                while (rs.next()) {
+                    if (rs.getString("nom").equals(nau2.getNau().getNom())) {
+                        String updatear = "UPDATE jugador SET punts = ? WHERE nom = ?";
+                        PreparedStatement ps = conn.prepareStatement(updatear);
+                        ps.setDouble(1, nau2.getNau().getPunts());
+                        ps.setString(2, nau2.getNau().getNom());
+                        ps.executeUpdate();
+                        break;
                     }
                 }
             }
+        }
+        catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        finally {
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException sqlEx) {
+                }
+                rs = null;
+            }
+            if (st != null) {
+                try {
+                    st.close();
+                } catch (SQLException sqlEx) {
+                }
+                st = null;
+            }
+        }
+
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/videojocjdbc?" + "user=root&password=super3");
+            st = conn.createStatement();
+            rs = st.executeQuery("SELECT * FROM jugador");
+
+            while (rs.next()) {
+                if (rs.getDouble("punts") < 400) {
+                    Iterator<Nau> it2 = llistaNausDecorator.iterator();
+                    while(it2.hasNext()) {
+                        Nau nau = it2.next();
+                        if(nau.getNau().getNom().equals(rs.getString("nom"))) {
+                            it2.remove();
+                            break;
+                        }
+                    }
+                    String borrarSql ="DELETE FROM jugador WHERE nom = ?";
+                    PreparedStatement ps = conn.prepareStatement(borrarSql);
+                    ps.setString(1, rs.getString("nom"));
+                    ps.executeUpdate();
+                }
+            }
+        }
+        catch(SQLException ex){
+            // handle any errors
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        finally {
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException sqlEx) { }
+                rs = null;
+            }
+            if (st != null) {
+                try {
+                    st.close();
+                } catch (SQLException sqlEx) { }
+                st = null;
+            }
+        }
+
+        System.out.println("-------------------------------------");
+        System.out.println("Naus després d'eliminar i actualitzar les corresponents: ");
+        for(Nau nauDelete : llistaNausDecorator) {
+            System.out.println("Nom: " + nauDelete.getNau().getNom()+ ", Saldo: " + nauDelete.getNau().getSaldoRecursos()+ ", Punts: " + nauDelete.getNau().getPunts());
         }
 
         //Afegim una nau nova amb molts punts i amb la lletra A per si quedés alguna nau després d'haver realitzat
         //el delete anterior poder comprovar si es fa l'ordenació tant de punts com de nom correctament.
 
-        Nau patata = nFactory.crearNau(recolectorPunts2, "Nau lleugera", 8000, "A", 10);
+        RecolectorPunts recolectorPunts7= new RecolectorPunts();
+        Nau patata = nFactory.crearNau(recolectorPunts7, "Nau lleugera", 8000, "A", 10);
         llistaNausDecorator.add(patata);
-        //Utilitzem un SortedSet per a que els compareTo de les classes de les naus funcionin i s'ordenin les naus pel seu nom
+        //Utilitzem un SortedSet perquè els compareTo de les classes de les naus funcionin i s'ordenin les naus pel seu nom
         SortedSet<Nau> naves= new TreeSet<>();
         naves.addAll(llistaNausDecorator);
 
